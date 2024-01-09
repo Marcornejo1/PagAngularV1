@@ -24,7 +24,7 @@ export class NavbarComponent {
 
   constructor(private router: Router, private empleadosServicio: EmpleadosService, public dialog: MatDialog, private toastr:ToastrService) {
     
-    const SessionValue = sessionStorage.getItem('user');
+    const SessionValue = localStorage.getItem('user');
     
     console.log('Hola: ',SessionValue);
     if (SessionValue?.includes('"SesInic":""') || SessionValue?.includes('"SesInic":"NO"')) {
@@ -35,11 +35,11 @@ export class NavbarComponent {
         ADAreaUser: 'Visita',
         SesInic: "NO",
       };
-      sessionStorage.setItem('user', JSON.stringify(initialSessionObject));
+      localStorage.setItem('user', JSON.stringify(initialSessionObject));
       this.sesionIniciada=false
     }
     else {
-      console.log("Ya hay una session iniciada: " + sessionStorage.getItem('user'));
+      console.log("Ya hay una session iniciada: " + localStorage.getItem('user'));
       this.sesionIniciada=true
       
     }
@@ -56,15 +56,17 @@ export class NavbarComponent {
   }
 
   verifDatos(){
-    sessionStorage.setItem('user', JSON.stringify(this.empleadosServicio.DatosPerfil));
-    this.perfil = sessionStorage.getItem('user'); 
+    localStorage.setItem('user', JSON.stringify(this.empleadosServicio.DatosPerfil));
+    this.perfil = localStorage.getItem('user'); 
     this.perfil=JSON.parse(this.perfil);
     console.log("Dialog cerrado: ",this.perfil);
     this.start=this.perfil.SesInic;
+    
 
     if(this.start=="SI"){
       console.log("SI: ",this.perfil);
       this.sesionIniciada=true;
+      localStorage.setItem('user', JSON.stringify(this.perfil));
       this.toastr.success(this.perfil.TxtBDatos,"",{positionClass:'toast-bottom-right'});
     }
 
@@ -103,7 +105,7 @@ export class NavbarComponent {
         ADAreaUsr: "Visita",
         SesInic: "",
       };
-      sessionStorage.setItem('user', JSON.stringify(this.perfil));
+      localStorage.setItem('user', JSON.stringify(this.perfil));
       console.log(this.start);
       window.location.reload();
     });

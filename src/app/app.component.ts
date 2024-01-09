@@ -22,7 +22,7 @@ export class AppComponent {
 
   
   constructor(private router:Router,public dialog:MatDialog,private empleadoservicio: EmpleadosService){
-    const sessionValue=sessionStorage.getItem('user');
+    const sessionValue=localStorage.getItem('user');
     if (sessionValue == null || sessionValue == "") {
       console.log("El objeto de sesión no está inicializado"); //inicialízalo aquí
       const initialSessionObject: any = {
@@ -31,10 +31,10 @@ export class AppComponent {
         ADAreaUsr: 'Visita',
         SesInic: 'NO'
       };
-      sessionStorage.setItem('user', JSON.stringify(initialSessionObject));
+      localStorage.setItem('user', JSON.stringify(initialSessionObject));
     }
     else {
-      console.log("Si existe objeto: " + sessionStorage.getItem('user'));
+      console.log("Si existe objeto: " + localStorage.getItem('user'));
 
     }
   }

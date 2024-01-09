@@ -9,7 +9,6 @@ import { InicioComponent } from './inicio/inicio.component';
 import { ValoresComponent } from './valores/valores.component';
 import { MisionVisionComponent } from './mision-vision/mision-vision.component';
 import { DirectorioComponent } from './directorio/directorio.component';
-
 import { InformacionComponent } from './informacion/informacion.component';
 import { AreaComponent } from './area/area.component';
 import { MatDialog, MAT_DIALOG_DATA, MatDialogRef, MatDialogModule } from '@angular/material/dialog';
@@ -23,9 +22,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { ToastrModule } from 'ngx-toastr'; 
-import {MatTableModule} from '@angular/material/table';
+import { ToastrModule } from 'ngx-toastr';
+import { MatTableModule } from '@angular/material/table';
 import { SistemaGestionComponent } from './sistema-gestion/sistema-gestion.component';
+
 
 @NgModule({
   declarations: [
@@ -34,13 +34,12 @@ import { SistemaGestionComponent } from './sistema-gestion/sistema-gestion.compo
     ValoresComponent,
     MisionVisionComponent,
     DirectorioComponent,
- 
     InformacionComponent,
     AreaComponent,
     LoginComponent,
     NavbarComponent,
     SistemaGestionComponent,
-    
+
   ],
   imports: [
     BrowserModule,
@@ -48,7 +47,7 @@ import { SistemaGestionComponent } from './sistema-gestion/sistema-gestion.compo
     BrowserAnimationsModule,
     NavModule,
     NavbarModule,
-    GridModule,    
+    GridModule,
     CollapseModule,
     DropdownModule,
     OffcanvasModule,
