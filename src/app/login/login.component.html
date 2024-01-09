@@ -1,0 +1,26 @@
+<h2 mat-dialog-title>Inicio de Sesion Red RCU</h2>
+<mat-dialog-content class="mat-typography">
+    <form (ngSubmit)="enviarFormulario()">
+        <label for="usuario">Usuario</label>
+        <p>
+            <mat-form-field appearance="fill">
+
+                <input matInput placeholder="Usuario de AD" [(ngModel)]="user.usuario" name="usuario" required>
+
+            </mat-form-field>
+        </p>
+        <label>Clave</label>
+        <p>
+            <mat-form-field>
+                <mat-label for="clave">Enter your password</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="user.clave" name="clave" required>
+
+            </mat-form-field>
+        </p>
+
+        <mat-dialog-actions align="end">
+            <button mat-button mat-dialog-close>Cancel</button>
+            <button mat-button  cdkFocusInitial type="submit">Iniciar Sesion</button>
+        </mat-dialog-actions>
+    </form>
+</mat-dialog-content>

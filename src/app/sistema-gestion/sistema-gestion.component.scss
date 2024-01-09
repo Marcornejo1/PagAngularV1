@@ -1,0 +1,15 @@
+@import "../../../node_modules/bulma/css/bulma-rtl.min.css";
+.Contenedor {
+    width: auto;
+    height: 100vh;
+    background-image: url("../../assets/fondo_sistemas.jpg");
+            background-color: transparent;
+        
+            background-repeat: no-repeat;
+
+            background-size: cover;
+    
+  }
+  .texto {
+    color: azure;
+}

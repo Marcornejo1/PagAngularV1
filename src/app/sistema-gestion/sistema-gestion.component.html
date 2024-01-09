@@ -1,0 +1,19 @@
+<div class="Contenedor">
+    <div class="block">
+        <h1 style="font-size: 50px; color:azure; padding-top: 10px;">{{area}}</h1>
+    </div>
+    <div class="box">
+        <ul>
+        <li *ngFor="let archivo of archivos">
+            <div *ngIf="archivo.nombre !=='.' && archivo.nombre !=='..'">
+                <div *ngIf="archivo.tipo === 'application/pdf'">
+                    <p><a [href]="'http://rcu.intranet/Archivos/'+area+'/'+archivo.nombre">{{ archivo.nombre }}</a></p>
+                </div>
+                <div *ngIf="archivo.tipo !== 'application/pdf'">
+                    <p><a>{{archivo.nombre}}</a></p><button (click)="descargarArchivo(archivo.nombre)">Descargar</button>
+                </div>
+            </div>
+        </li>
+        </ul>
+    </div>
+</div>

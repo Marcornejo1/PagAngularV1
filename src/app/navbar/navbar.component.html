@@ -1,0 +1,89 @@
+<c-navbar colorScheme="dark" class="bg-primary">
+    <c-container fluid>
+      <button [cNavbarToggler] cOffcanvasToggle="OffcanvasSidebar"></button>
+      <button cButton color="primary" (click)="irAInicio()"><img src="../assets/img/logotipo.png" width="125" height="50"></button>
+      <span class="example-spacer"></span>
+      <button cButton color="primary" (click)="irAInformacion()">Acerca De</button>
+      <span class="example-spacer"></span>
+      <button cButton color="primary" (click)="irAMisVis()">Mision/Vision</button>
+      <span class="example-spacer"></span>
+      <button cButton color="primary" (click)="irAArea()">Area</button>
+      <span class="example-spacer"></span>
+      <button cButton color="primary" (click)="irAValores()">Valores</button>
+      <span class="example-spacer"></span>
+      <c-dropdown>
+        <button cButton color="primary" cDropdownToggle>Sistema de Gestion</button>
+        <ul cDropdownMenu>
+          <button cDropdownItem (click)="irASistemaGestion('Informacion Documentada')">Informacion Documentada</button>
+          <button cDropdownItem (click)="irASistemaGestion('Comite de Calidad')">Comite de Calidad</button>
+          <button cDropdownItem (click)="irASistemaGestion('Operaciones')">Operaciones</button>
+          <button cDropdownItem (click)="irASistemaGestion('Ingenieria de Proyectos')">Ingenieria de Proyectos</button>
+          <button cDropdownItem (click)="irASistemaGestion('Recursos Humanos')">Recursos Humanos</button>
+          <button cDropdownItem (click)="irASistemaGestion('Tecnologia')">Tecnologia</button>
+          <button cDropdownItem (click)="irASistemaGestion('Seguridad')">Seguridad</button>
+          <button cDropdownItem (click)="irASistemaGestion('Comercial')">Comercial</button>
+          <button cDropdownItem (click)="irASistemaGestion('Central')">Central</button>
+          <button cDropdownItem (click)="irASistemaGestion('Administracion')">Administracion</button>
+          <button cDropdownItem (click)="irASistemaGestion('Servicios Generales')">Servicios Generales</button>
+          <button cDropdownItem (click)="irASistemaGestion('Salud Ocupacional')">Salud Ocupacional</button>
+          <button cDropdownItem (click)="irASistemaGestion('Implementacion y Seguimiento')">Implementacion y Seguimiento</button>
+        </ul>
+      </c-dropdown>
+      <button cButton color="primary" (click)="irADirectorio()">Directorio</button>
+      <span class="example-spacer"></span>
+      <div *ngIf="!sesionIniciada">
+        <button cButton color="danger" shape="rounded-pill" (click)="openDialog()">Iniciar Sesion</button>
+      </div>
+      <span class="example-spacer"></span>
+      <div *ngIf="sesionIniciada">
+        
+        <button mat-raised-button color="primary">Mi Cuenta</button>
+        <a>-------</a>
+        <span class="example-spacer"></span>
+        <button mat-raised-button color="warn" (click)="Logout()" >Salir</button>
+        <span class="example-spacer"></span>
+        
+      </div>
+  
+      <c-offcanvas
+        placement="end"
+        id="OffcanvasSidebar"
+        class="text-bg-dark"
+      >
+        <c-offcanvas-header>
+          <h5 cOffcanvasTitle>Offcanvas</h5>
+          <button
+            cButtonClose
+            class="text-reset"
+            cOffcanvasToggle="OffcanvasSidebar"
+            aria-label="Close"
+          ></button>
+        </c-offcanvas-header>
+        <c-offcanvas-body>
+          <c-navbar-nav>
+            <c-nav-item>
+              <a cNavLink >Home</a>
+            </c-nav-item>
+            <c-nav-item>
+              <a cNavLink>Link</a>
+            </c-nav-item>
+            <c-dropdown variant="nav-item" [popper]="false">
+              <a cDropdownToggle cNavLink>Dropdown</a>
+              <ul cDropdownMenu>
+                <li><button cDropdownItem>Action</button></li>
+                <li><button cDropdownItem>Another action</button></li>
+                <li><button cDropdownItem>Something else here</button></li>
+              </ul>
+            </c-dropdown>
+            <c-nav-item>
+              <a cNavLink disabled>Disabled</a>
+            </c-nav-item>
+          </c-navbar-nav>
+          <form cForm class="d-flex" role="search">
+            <input cFormControl type="search" placeholder="Search" aria-label="Search" class="me-2">
+            <button cButton color="success" variant="outline">Search</button>
+          </form>
+        </c-offcanvas-body>
+      </c-offcanvas>
+    </c-container>
+  </c-navbar>
