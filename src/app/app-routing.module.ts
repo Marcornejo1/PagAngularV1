@@ -7,6 +7,7 @@ import { DirectorioComponent } from './directorio/directorio.component';
 import { InformacionComponent } from './informacion/informacion.component';
 import { AreaComponent } from './area/area.component';
 import { SistemaGestionComponent } from './sistema-gestion/sistema-gestion.component';
+import { CuentaComponent } from './cuenta/cuenta.component';
 
 const routes: Routes = [
   {path:'', component:InicioComponent},
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path:'Directorio',component:DirectorioComponent},
   {path:'Area',component:AreaComponent},
   {path:'Informacion',component:InformacionComponent},
+  {path:'MiCuenta',component:CuentaComponent},
   {path:'SistemaGestion/:area',component:SistemaGestionComponent},
   
 ];

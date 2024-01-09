@@ -25,6 +25,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ToastrModule } from 'ngx-toastr';
 import { MatTableModule } from '@angular/material/table';
 import { SistemaGestionComponent } from './sistema-gestion/sistema-gestion.component';
+import { CuentaComponent } from './cuenta/cuenta.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { SistemaGestionComponent } from './sistema-gestion/sistema-gestion.compo
     LoginComponent,
     NavbarComponent,
     SistemaGestionComponent,
+    CuentaComponent,
 
   ],
   imports: [

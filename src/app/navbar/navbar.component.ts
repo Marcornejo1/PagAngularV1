@@ -93,6 +93,9 @@ export class NavbarComponent {
   irASistemaGestion(Area: string) {
     this.router.navigate(['/SistemaGestion', Area]);
   }
+  irAMiCuenta(){
+    this.router.navigate(['/MiCuenta']);
+  }
 
   Logout(){
     this.empleadosServicio.cerrarSesion().subscribe(resp=>{

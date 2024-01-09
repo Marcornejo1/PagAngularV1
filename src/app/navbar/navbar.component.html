@@ -37,7 +37,7 @@
       <span class="example-spacer"></span>
       <div *ngIf="sesionIniciada">
         
-        <button mat-raised-button color="primary">Mi Cuenta</button>
+        <button mat-raised-button color="primary" (click)="irAMiCuenta()">Mi Cuenta</button>
         <a>-------</a>
         <span class="example-spacer"></span>
         <button mat-raised-button color="warn" (click)="Logout()" >Salir</button>
