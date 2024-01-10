@@ -8,6 +8,7 @@ import { InformacionComponent } from './informacion/informacion.component';
 import { AreaComponent } from './area/area.component';
 import { SistemaGestionComponent } from './sistema-gestion/sistema-gestion.component';
 import { CuentaComponent } from './cuenta/cuenta.component';
+import { GeneradorQRComponent } from './generador-qr/generador-qr.component';
 
 const routes: Routes = [
   {path:'', component:InicioComponent},
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path:'Area',component:AreaComponent},
   {path:'Informacion',component:InformacionComponent},
   {path:'MiCuenta',component:CuentaComponent},
+  {path:'GeneradorQR',component:GeneradorQRComponent},
   {path:'SistemaGestion/:area',component:SistemaGestionComponent},
   
 ];

@@ -1,5 +1,6 @@
 import { Component,OnInit } from '@angular/core';
 import { AnunciosService } from '../anuncios.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inicio',
@@ -14,7 +15,7 @@ export class InicioComponent {
   ];
   slides: any[] = new Array(3).fill({id: -1, src: '', title: '', subtitle: '', tipo:''});
 
-  constructor( private servicioAnuncios: AnunciosService) { 
+  constructor( private servicioAnuncios: AnunciosService, private router: Router) { 
     setTimeout(()=>{
       this.mostrar=true;
     },1000);
@@ -57,7 +58,7 @@ export class InicioComponent {
   }
 
 IrAQR(){
-
+ this.router.navigate(['/GeneradorQR']);
 }
 
 }

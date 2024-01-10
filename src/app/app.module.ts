@@ -26,7 +26,9 @@ import { ToastrModule } from 'ngx-toastr';
 import { MatTableModule } from '@angular/material/table';
 import { SistemaGestionComponent } from './sistema-gestion/sistema-gestion.component';
 import { CuentaComponent } from './cuenta/cuenta.component';
-
+import { GeneradorQRComponent } from './generador-qr/generador-qr.component';
+import { QRCodeModule } from 'angularx-qrcode';
+import { QRCodeComponent } from 'angularx-qrcode/public-api';
 
 @NgModule({
   declarations: [
@@ -41,6 +43,7 @@ import { CuentaComponent } from './cuenta/cuenta.component';
     NavbarComponent,
     SistemaGestionComponent,
     CuentaComponent,
+    GeneradorQRComponent,
 
   ],
   imports: [
@@ -66,6 +69,8 @@ import { CuentaComponent } from './cuenta/cuenta.component';
     MatGridListModule,
     HttpClientModule,
     MatTableModule,
+    QRCodeModule,
+    
     ToastrModule.forRoot(),
 
   ],

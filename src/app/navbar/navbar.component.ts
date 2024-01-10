@@ -26,7 +26,7 @@ export class NavbarComponent {
     
     const SessionValue = localStorage.getItem('user');
     
-    console.log('Hola: ',SessionValue);
+    
     if (SessionValue?.includes('"SesInic":""') || SessionValue?.includes('"SesInic":"NO"')) {
       console.log("No existe sesion Iniciada");
       const initialSessionObject: any = {

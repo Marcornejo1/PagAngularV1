@@ -1,0 +1,20 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatile">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<div class="Contenedor">
+    <div class="Contenido">
+        <div class="header">
+            <div>Generador de QR</div>
+        </div>
+        <input type="text" placeholder="Ingresa el Link o escribe un texto" class="text-field" [(ngModel)]="QRInput">
+
+        <button class="gen" (click)="GenQR()">Generar</button>
+
+        <qrcode (qrCodeURL)="onCodeChange($event)" [allowEmptyString]="true" [qrdata]="TextoQR" [width]="300"
+            [errorCorrectionLevel]="'H'"></qrcode>
+
+        <a [href]="url" download="QrGenerado">Descargar Codigo QR</a>
+    </div>
+</div>

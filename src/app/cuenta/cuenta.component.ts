@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrl: './cuenta.component.scss'
 })
 export class CuentaComponent {
+  perfil:any;
+  constructor(){
+    const SessionValue=localStorage.getItem('user');
+    console.log('Hola: ',SessionValue);
+    this.perfil=SessionValue;
+    this.perfil=JSON.parse(this.perfil);
+  }
 
 }
