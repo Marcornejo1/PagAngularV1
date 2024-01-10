@@ -25,8 +25,10 @@ export class NavbarComponent {
   constructor(private router: Router, private empleadosServicio: EmpleadosService, public dialog: MatDialog, private toastr:ToastrService) {
     
     const SessionValue = localStorage.getItem('user');
+    this.perfil=SessionValue;
+    this.perfil=JSON.parse(this.perfil);
     
-    
+    console.log('Hola: ',SessionValue);
     if (SessionValue?.includes('"SesInic":""') || SessionValue?.includes('"SesInic":"NO"')) {
       console.log("No existe sesion Iniciada");
       const initialSessionObject: any = {
@@ -36,12 +38,11 @@ export class NavbarComponent {
         SesInic: "NO",
       };
       localStorage.setItem('user', JSON.stringify(initialSessionObject));
-      this.sesionIniciada=false
+      this.sesionIniciada=false;
     }
     else {
       console.log("Ya hay una session iniciada: " + localStorage.getItem('user'));
       this.sesionIniciada=true
-      
     }
 
   }
