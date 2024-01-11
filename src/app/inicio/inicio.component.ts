@@ -22,35 +22,40 @@ export class InicioComponent {
 
     this.servicioAnuncios.dataArray$.subscribe((dataArray)=>{
       this.multimedia=dataArray;
+      
       const Elemento1=this.multimedia[0];
       const Elemento2=this.multimedia[1];
       const Elemento3=this.multimedia[2];
 
       this.slides[0]={
-
+       // id:Elemento1.id,
+        src:Elemento1.rutaArchivo,
+        title:'En desarrollo',
+        subtitle:'Elemento en desarrollo',
+        tipo:Elemento1.tipo,
       }
-
+      console.log('Imagen 1:', this.multimedia[0]);
       this.slides[1]={
-
+       // id:Elemento2.id,
+        src:Elemento2.rutaArchivo,
+        title:'En desarrollo',
+        subtitle:'Elemento en desarrollo',
+        tipo:Elemento2.tipo,
       }
-
+      console.log('Imagen 2:', this.multimedia[1]);
       this.slides[2]={
-
+        //id:Elemento3.id,
+        src:Elemento3.rutaArchivo,
+        title:'En desarrollo',
+        subtitle:'Elemento en desarrollo',
+        tipo:Elemento3.tipo,
       }
-      
+      console.log('Imagen 3:', this.multimedia[2]);
     });
   }
 
   ngOnInit(): void {
-    this.slides[0] = {
-      src: './assets/img/I1.jpg',
-    };
-    this.slides[1] = {
-      src: './assets/img/I2.jpg',
-    }
-    this.slides[2] = {
-      src: './assets/img/I3.jpg',
-    }
+
   }
 
   onItemChange($event: any): void {

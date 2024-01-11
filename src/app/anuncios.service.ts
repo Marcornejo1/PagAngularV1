@@ -9,7 +9,7 @@ import { BehaviorSubject } from 'rxjs';
 export class AnunciosService {
   private dataArrayS:BehaviorSubject<any[]>=new BehaviorSubject<any[]>([]);
   dataArray$:Observable<any[]>=this.dataArrayS.asObservable();
-  private Url='http://rcu.intranet/PHP/'
+  private Url='http://rcu.intranet/PHP/';
 
   constructor(private http:HttpClient) { }
 
@@ -20,7 +20,7 @@ export class AnunciosService {
     return this.http.post(this.Url+'SubirAnuncio.php',formData);
   }
 
-  PedirArchivo(): Observable<any[]>{
+  PedirArchivos(): Observable<any[]>{
     return this.http.get<any[]>(this.Url+'PedirArchivos.php');
   }
 

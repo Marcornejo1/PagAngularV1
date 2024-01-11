@@ -5,17 +5,34 @@
 <div class="Contenedor">
   <div class="columns">
     <div class="column is-two-thirds">
+      <div *ngIf="mostrar">
+        <c-carousel (itemChange)="onItemChange($event)" [interval]="50000" transition="slide">
+          <c-carousel-indicators></c-carousel-indicators>
+          <c-carousel-inner>
+            <c-carousel-item *ngFor="let slide of slides">
 
-      <c-carousel (itemChange)="onItemChange($event)" [interval]="3000" transition="slide">
-        <c-carousel-indicators></c-carousel-indicators>
-        <c-carousel-inner>
-          <c-carousel-item *ngFor="let slide of slides">
-            <img [src]="slide.src" alt="{{ slide.title }}" class="d-block w-100" loading="lazy" />
-          </c-carousel-item>
-        </c-carousel-inner>
-        <c-carousel-control [routerLink] caption="Previous" direction="prev"></c-carousel-control>
-        <c-carousel-control [routerLink] caption="Next" direction="next"></c-carousel-control>
-      </c-carousel>
+              <div *ngIf="slide.tipo==='image/jpeg'">
+                <img [src]="slide.src" alt="{{ slide.title }}" class="d-block w-100" loading="lazy" />
+              </div>
+
+              <div *ngIf="slide.tipo==='video/mp4'">
+                <video class="video-container" loop autoplay controls>
+                  <source src="{{slide.src}}" type="video/mp4">
+                </video>
+              </div>
+
+              <c-carousel-caption class="d-none d-md-block">
+                <h3>{{slide.title}}</h3>
+                <p>{{slide.subtitle}}</p>
+                <p>{{slide.tipo}}</p>
+              </c-carousel-caption>
+
+            </c-carousel-item>
+          </c-carousel-inner>
+          <c-carousel-control [routerLink] caption="Previous" direction="prev"></c-carousel-control>
+          <c-carousel-control [routerLink] caption="Next" direction="next"></c-carousel-control>
+        </c-carousel>
+      </div>
     </div>
     <div class="column">
       <p class="TituloHerramGen">Herramientas Generales:</p>
@@ -44,7 +61,8 @@
             <p align="center" class="Herramienta">Dropbox</p>
           </div>
           <div class="column is-half">
-            <a title="Zoom" href="https://zoom.us/es" target="_blank"><img src="../../assets/img/LogoZoom.png" class="imgERP"></a>
+            <a title="Zoom" href="https://zoom.us/es" target="_blank"><img src="../../assets/img/LogoZoom.png"
+                class="imgERP"></a>
             <p align="center" class="Herramienta">Zoom</p>
           </div>
         </div>
