@@ -19,6 +19,9 @@
         </p>
 
         <mat-dialog-actions align="end">
+            <a *ngIf="SimboloCarga">
+                <c-spinner color="primary"></c-spinner>
+            </a>
             <button mat-button mat-dialog-close>Cancel</button>
             <button mat-button  cdkFocusInitial type="submit">Iniciar Sesion</button>
         </mat-dialog-actions>

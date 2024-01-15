@@ -6,7 +6,7 @@
   <div class="columns">
     <div class="column is-two-thirds">
       <div *ngIf="mostrar">
-        <c-carousel (itemChange)="onItemChange($event)" [interval]="50000" transition="slide">
+        <c-carousel (itemChange)="onItemChange($event)" [interval]="5000" transition="slide">
           <c-carousel-indicators></c-carousel-indicators>
           <c-carousel-inner>
             <c-carousel-item *ngFor="let slide of slides">

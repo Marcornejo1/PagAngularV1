@@ -28,7 +28,9 @@ import { SistemaGestionComponent } from './sistema-gestion/sistema-gestion.compo
 import { CuentaComponent } from './cuenta/cuenta.component';
 import { GeneradorQRComponent } from './generador-qr/generador-qr.component';
 import { QRCodeModule } from 'angularx-qrcode';
+import { SpinnerModule } from '@coreui/angular';
 import { QRCodeComponent } from 'angularx-qrcode/public-api';
+import { SubirAnuncioComponent } from './subir-anuncio/subir-anuncio.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,7 @@ import { QRCodeComponent } from 'angularx-qrcode/public-api';
     SistemaGestionComponent,
     CuentaComponent,
     GeneradorQRComponent,
+    SubirAnuncioComponent,
 
   ],
   imports: [
@@ -70,7 +73,7 @@ import { QRCodeComponent } from 'angularx-qrcode/public-api';
     HttpClientModule,
     MatTableModule,
     QRCodeModule,
-    
+    SpinnerModule,
     ToastrModule.forRoot(),
 
   ],

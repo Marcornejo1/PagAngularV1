@@ -1,0 +1,30 @@
+.imagenes {
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 140px;
+    height: 50px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.imagenes:hover {
+    background-color: aqua;
+    color: black;
+}
+
+.imgs {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.imagenes2 {
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 140px;
+    height: 67px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.imagenes2:hover {
+    background-color: aqua;
+    color: black;
+}

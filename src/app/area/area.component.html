@@ -1,1 +1,32 @@
-<div class="Contenedor"></div>
+<div class="Contenedor">
+    <div class="block">
+        <h1 style="font-size: 50px; color:azure; padding-top: 10px;">{{perfil.ADAreaUsr}}</h1>
+    </div>
+    <div class="box">
+        <ul>
+            <h1 style="font-size: x-large;">Documentos para uso solo del Area:</h1>
+            <li *ngFor="let archivo of archivos">
+                <div *ngIf="archivo.nombre !=='.' && archivo.nombre !=='..'">
+                    <div *ngIf="archivo.tipo === 'application/pdf'">
+                        <p><a [href]="'http://rcu.intranet/Archivos/'+perfil.ADAreaUsr+'/'+archivo.nombre">{{
+                                archivo.nombre }}</a></p>
+                    </div>
+                    <div *ngIf="archivo.tipo !== 'application/pdf'">
+                        <p><a>{{archivo.nombre}}</a></p><button
+                            (click)="descargarArchivo(archivo.nombre)">Descargar</button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+</div>
+
+
+<!-- <a>{{perfil.ADAreaUsr}}</a>
+        <li *ngFor="let archivo of archivos">
+            <div *ngIf="archivo !== '.' && archivo !== '..'">
+                <a (click)="descargarArchivo(archivo)">{{ archivo }}</a>
+                <!--<button mat-raised-button (click)="descargarArchivo(archivo)">Descargar</button> 
+            </div>
+        </li>-->

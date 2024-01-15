@@ -8,7 +8,7 @@ import { EmpleadosService } from '../empleados.service';
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
-
+  SimboloCarga=false;
   perfil:any={};
 
   constructor(public dialog:MatDialog,private empleadoservicio:EmpleadosService) { }
@@ -19,6 +19,7 @@ export class LoginComponent {
   }
   
   enviarFormulario() {
+    this.SimboloCarga=true;
     this.empleadoservicio.enviarDatos(this.user).subscribe(
       respuesta=>{
         if(respuesta!=null){
