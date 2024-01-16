@@ -12,7 +12,7 @@
             <c-carousel-item *ngFor="let slide of slides">
 
               <div *ngIf="slide.tipo==='image/jpeg'">
-                <img [src]="slide.src" alt="{{ slide.title }}" class="d-block w-100" loading="lazy" />
+                <img [src]="slide.src" alt="{{ slide.title }}" class="img-container" loading="lazy" />
               </div>
 
               <div *ngIf="slide.tipo==='video/mp4'">
@@ -61,7 +61,7 @@
             <p align="center" class="Herramienta">Dropbox</p>
           </div>
           <div class="column is-half">
-            <a title="Zoom" href="https://zoom.us/es" target="_blank"><img src="../../assets/img/LogoZoom.png"
+            <a title="Zoom" href="https://zoom.us/es" target="_blank"><img src="../../assets/img/Zoom.png"
                 class="imgERP"></a>
             <p align="center" class="Herramienta">Zoom</p>
           </div>
@@ -86,8 +86,8 @@
       <ul class="menu-list">
         <div class="columns is-multiline is-mobile">
           <div class="column is-half">
-            <a title="Zoom" href="" target=""><img src="../../assets/img/test.jpg" class="imgERP"></a>
-            <p align="center" class="Herramienta">Placeholder</p>
+            <a title="SubirArchivo" (click)="IrASA()"><img src="../../assets/img/subirArchivoIcono.png" class="imgERP"></a>
+            <p align="center" class="Herramienta">Subir Anuncio</p>
           </div>
           <div class="column is-half">
             <a title="Zoom" href="" target=""><img src="../../assets/img/test.jpg" class="imgERP"></a>

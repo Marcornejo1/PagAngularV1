@@ -66,4 +66,8 @@ IrAQR(){
  this.router.navigate(['/GeneradorQR']);
 }
 
+IrASA(){
+  this.router.navigate(['/SubidaAnuncio']);
+ }
+
 }

@@ -1,1 +1,21 @@
-<p>subir-anuncio works!</p>
+<div class="Contenedor">
+    <div class="block">
+        <h1 style="font-size: 50px; color:azure; padding-top: 10px;">Subir Archivos</h1>
+    </div>
+    <div class="Contenido">
+        
+            <form (ngSubmit)="SubirArchivo()" enctype="multipart/form-data">
+                <div class="field">
+                    <label class="label">Archivo del anuncio </label>
+                    <input class="form-control form-control-lg" name="Archivo" type="file" accept="image/*,video/*"
+                        (change)="ArchivoSeleccionado($event)">
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <button type="submit" class="button is-link">Enviar</button>
+                    </div>
+                </div>
+            </form>
+        
+    </div>
+</div>
