@@ -22,4 +22,10 @@ export class EmpleadosService {
     return this.http.get(this.URL+'Logout.php');
   }
 
+  SolicitarClave(usuario:any): Observable<any>{
+    console.error("Datos enviados: ",usuario);
+    return this.http.post (this.URL+'Cuenta.php',usuario);
+
+  }
+
 }

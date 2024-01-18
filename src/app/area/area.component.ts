@@ -12,11 +12,13 @@ export class AreaComponent {
   perfil: any;
   archivos: any[] = [];
   constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router, private servicioArchivos: ArchivosService) {
+    console.clear();
     const SessionValue = localStorage.getItem('user');
     console.log('Hola: ', SessionValue);
     this.perfil = SessionValue;
     this.perfil = JSON.parse(this.perfil);
-
+    console.error(this.perfil);
+    
     this.servicioArchivos.obtenerArchivos().subscribe(data => {
       if(data){
         this.archivos=data;

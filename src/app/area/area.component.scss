@@ -1,6 +1,7 @@
 @import "../../../node_modules/bulma/css/bulma-rtl.min.css";
 
 .Contenedor {
+    min-height: 100vh;
     width: auto;
     height: auto;
     background-image: url("../../assets/fondo_sistemas.jpg");

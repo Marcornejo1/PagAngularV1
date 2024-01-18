@@ -17,7 +17,7 @@ export class NavbarComponent {
   perfil: any = {
     Respuesta: "Predeterminado",
     ADUser: "",
-    ADAreaUser: "Visita",
+    ADAreaUsr: "Visita",
     SesInic: "",
   }
   @Output() salida = new EventEmitter<boolean>();
@@ -34,7 +34,7 @@ export class NavbarComponent {
       const initialSessionObject: any = {
         Respuesta: 'Predeterminada',
         ADUser: '',
-        ADAreaUser: 'Visita',
+        ADAreaUsr: 'Visita',
         SesInic: "NO",
       };
       localStorage.setItem('user', JSON.stringify(initialSessionObject));
@@ -97,6 +97,14 @@ export class NavbarComponent {
   irAMiCuenta(){
     this.router.navigate(['/MiCuenta']);
   }
+
+  IrAQR(){
+    this.router.navigate(['/GeneradorQR']);
+   }
+
+   IrASA(){
+    this.router.navigate(['/SubidaAnuncio']);
+   }
 
   Logout(){
     this.empleadosServicio.cerrarSesion().subscribe(resp=>{

@@ -16,6 +16,7 @@ export class InicioComponent {
   slides: any[] = new Array(3).fill({id: -1, src: '', title: '', subtitle: '', tipo:''});
 
   constructor( private servicioAnuncios: AnunciosService, private router: Router) { 
+    
     setTimeout(()=>{
       this.mostrar=true;
     },1000);
@@ -62,12 +63,8 @@ export class InicioComponent {
     //console.log('Carousel onItemChange', $event);
   }
 
-IrAQR(){
- this.router.navigate(['/GeneradorQR']);
-}
 
-IrASA(){
-  this.router.navigate(['/SubidaAnuncio']);
- }
+
+
 
 }
