@@ -28,9 +28,9 @@ export class NavbarComponent {
     this.perfil=SessionValue;
     this.perfil=JSON.parse(this.perfil);
     
-    console.log('Hola: ',SessionValue);
+    //console.log('Hola: ',SessionValue);
     if (SessionValue?.includes('"SesInic":""') || SessionValue?.includes('"SesInic":"NO"')) {
-      console.log("No existe sesion Iniciada");
+     // console.log("No existe sesion Iniciada");
       const initialSessionObject: any = {
         Respuesta: 'Predeterminada',
         ADUser: '',
@@ -41,7 +41,7 @@ export class NavbarComponent {
       this.sesionIniciada=false;
     }
     else {
-      console.log("Ya hay una session iniciada: " + localStorage.getItem('user'));
+     // console.log("Ya hay una session iniciada: " + localStorage.getItem('user'));
       this.sesionIniciada=true
     }
 
@@ -60,12 +60,12 @@ export class NavbarComponent {
     localStorage.setItem('user', JSON.stringify(this.empleadosServicio.DatosPerfil));
     this.perfil = localStorage.getItem('user'); 
     this.perfil=JSON.parse(this.perfil);
-    console.log("Dialog cerrado: ",this.perfil);
+    //console.log("Dialog cerrado: ",this.perfil);
     this.start=this.perfil.SesInic;
     
 
     if(this.start=="SI"){
-      console.log("SI: ",this.perfil);
+      //console.log("SI: ",this.perfil);
       this.sesionIniciada=true;
       localStorage.setItem('user', JSON.stringify(this.perfil));
       this.toastr.success(this.perfil.TxtBDatos,"",{positionClass:'toast-bottom-right'});
@@ -108,7 +108,7 @@ export class NavbarComponent {
 
   Logout(){
     this.empleadosServicio.cerrarSesion().subscribe(resp=>{
-      console.log(resp);
+      //console.log(resp);
       this.sesionIniciada = false;
       this.start = "NO";
       this.perfil = {
@@ -118,8 +118,13 @@ export class NavbarComponent {
         SesInic: "",
       };
       localStorage.setItem('user', JSON.stringify(this.perfil));
-      console.log(this.start);
-      window.location.reload();
+      this.toastr.warning("Se cerro la sesion","",{positionClass:'toast-bottom-right'})
+      //console.log(this.start);
+      setTimeout(()=>{
+        window.location.reload(); 
+      },1000);
+      
+      
     });
   }
 

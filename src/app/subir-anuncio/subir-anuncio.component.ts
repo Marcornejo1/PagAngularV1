@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AnunciosService } from '../anuncios.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-subir-anuncio',
@@ -8,7 +9,7 @@ import { AnunciosService } from '../anuncios.service';
 })
 export class SubirAnuncioComponent {
 
-  constructor(private ServicioAnuncios: AnunciosService) { }
+  constructor(private ServicioAnuncios: AnunciosService, private toastr:ToastrService) { }
 
   anuncio = {
     Titulo: '',
@@ -30,6 +31,7 @@ export class SubirAnuncioComponent {
       this.ServicioAnuncios.SubirAnuncio(this.selectedFile).subscribe(
         (respuesta)=>{
           console.log('Se subio con exito', respuesta);
+          this.toastr.success("Se envio correctamente el archivo","",{positionClass:'toast-bottom-right'})
         },
         (error)=>{
           console.error('Error al subir: ',error);

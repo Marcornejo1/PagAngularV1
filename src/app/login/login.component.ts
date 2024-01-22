@@ -24,14 +24,14 @@ export class LoginComponent {
       respuesta=>{
         if(respuesta!=null){
           this.perfil=respuesta;
-          console.log('Respuesta del Perfil: ', this.perfil.Respuesta);
-          console.log('Respuesta del PHP: ', this.perfil);
+          //console.log('Respuesta del Perfil: ', this.perfil.Respuesta);
+          //console.log('Respuesta del PHP: ', this.perfil);
           this.empleadoservicio.DatosPerfil=this.perfil;
           this.dialog.closeAll();
         }
       },
       error=>{
-        console.log('Error al enviar los datos: ', error);
+        //console.log('Error al enviar los datos: ', error);
       }
     );
   }

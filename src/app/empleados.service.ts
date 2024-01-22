@@ -13,17 +13,17 @@ export class EmpleadosService {
   constructor(private http:HttpClient) { }
 
   enviarDatos(datos:any): Observable<any>{
-    console.error("Datos enviados: ",datos);
+    //console.error("Datos enviados: ",datos);
     return this.http.post (this.URL+'EnviarDatos.php',datos);
   }
 
   cerrarSesion(){
-    console.error("Cerrando Sesion...")
+   // console.error("Cerrando Sesion...")
     return this.http.get(this.URL+'Logout.php');
   }
 
   SolicitarClave(usuario:any): Observable<any>{
-    console.error("Datos enviados: ",usuario);
+    //console.error("Datos enviados: ",usuario);
     return this.http.post (this.URL+'Cuenta.php',usuario);
 
   }
