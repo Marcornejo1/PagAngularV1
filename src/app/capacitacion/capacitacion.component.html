@@ -1,0 +1,90 @@
+<div class="Contenedor">
+    <div class="block">
+        <h1 style="font-size: 50px; color:azure; padding-top: 10px;">Capacitacion</h1>
+    </div>
+    <div class="Contenido">
+        <mat-tab-group (selectedTabChange)="onTabSelected($event)" color="primary" animationDuration="1500ms">
+            <mat-tab label="ERP">
+                <ul>
+                    <h1 style="font-size: x-large;">Documentos:</h1>
+                    <li *ngFor="let archivo of archivos">
+                        <div *ngIf="archivo.nombre !=='.' && archivo.nombre !=='..'">
+                            <div *ngIf="archivo.tipo === 'application/pdf'">
+                                <p><a [href]="'http://rcu.intranet/Archivos/Capacitacion/ERP/'+archivo.nombre">{{archivo.nombre}}</a></p>
+                            </div>
+                        </div>
+                    </li>
+                    <h1 style="font-size: x-large;">Documentos Descargables:</h1>
+                    <li *ngFor="let archivo of archivos">
+                        <div *ngIf="archivo.tipo !== 'application/pdf' && archivo.tipo !=='video/mp4'">
+                            <p class="texto"><a (click)="descargarArchivo(archivo.nombre)">{{archivo.nombre}}</a></p>
+                        </div>
+                    </li>
+                    <h1 style="font-size: x-large;">Videos disponibles:</h1>
+                    <li *ngFor="let archivo of archivos">
+                        <div *ngIf="archivo.tipo === 'video/mp4'">
+                            <video class="video-container" controls>
+                                <source src="http://rcu.intranet/Archivos/Capacitacion/ERP/{{archivo.nombre}}">
+                            </video>
+                            <p><a>{{archivo.nombre}}</a></p>
+                        </div>
+                    </li>
+                </ul>
+            </mat-tab>
+            <mat-tab label="Sistema de Gestion">
+                <ul>
+                    <h1 style="font-size: x-large;">Documentos:</h1>
+                    <li *ngFor="let archivo of archivos">
+                        <div *ngIf="archivo.nombre !=='.' && archivo.nombre !=='..'">
+                            <div *ngIf="archivo.tipo === 'application/pdf'">
+                                <p><a [href]="'http://rcu.intranet/Archivos/Capacitacion/Sistema de Gestion/'+archivo.nombre">{{archivo.nombre}}</a></p>
+                            </div>
+                        </div>
+                    </li>
+                    <h1 style="font-size: x-large;">Documentos Descargables:</h1>
+                    <li *ngFor="let archivo of archivos">
+                        <div *ngIf="archivo.tipo !== 'application/pdf' && archivo.tipo !=='video/mp4'">
+                            <p class="texto"><a (click)="descargarArchivo(archivo.nombre)">{{archivo.nombre}}</a></p>
+                        </div>
+                    </li>
+                    <h1 style="font-size: x-large;">Videos disponibles:</h1>
+                    <li *ngFor="let archivo of archivos">
+                        <div *ngIf="archivo.tipo === 'video/mp4'">
+                            <video class="video-container" controls>
+                                <source src="http://rcu.intranet/Archivos/Capacitacion/Sistema de Gestion/{{archivo.nombre}}">
+                            </video>
+                            <p>{{archivo.nombre}}</p>
+                        </div>
+                    </li>
+                </ul>
+            </mat-tab>
+            <mat-tab label="Onboarding">
+                <ul>
+                    <h1 style="font-size: x-large;">Documentos:</h1>
+                    <li *ngFor="let archivo of archivos">
+                        <div *ngIf="archivo.nombre !=='.' && archivo.nombre !=='..'">
+                            <div *ngIf="archivo.tipo === 'application/pdf'">
+                                <p><a [href]="'http://rcu.intranet/Archivos/Capacitacion/Onboarding/'+archivo.nombre">{{archivo.nombre}}</a></p>
+                            </div>
+                        </div>
+                    </li>
+                    <h1 style="font-size: x-large;">Documentos Descargables:</h1>
+                    <li *ngFor="let archivo of archivos">
+                        <div *ngIf="archivo.tipo !== 'application/pdf' && archivo.tipo !=='video/mp4'">
+                            <p class="texto"><a (click)="descargarArchivo(archivo.nombre)">{{archivo.nombre}}</a></p>
+                        </div>
+                    </li>
+                    <h1 style="font-size: x-large;">Videos disponibles:</h1>
+                    <li *ngFor="let archivo of archivos">
+                        <div *ngIf="archivo.tipo === 'video/mp4'">
+                            <video class="video-container" controls>
+                                <source src="http://rcu.intranet/Archivos/Capacitacion/Onboarding/{{archivo.nombre}}">
+                            </video>
+                            <p><a>{{archivo.nombre}}</a></p>
+                        </div>
+                    </li>
+                </ul>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</div>

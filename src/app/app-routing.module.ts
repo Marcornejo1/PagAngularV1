@@ -10,6 +10,8 @@ import { SistemaGestionComponent } from './sistema-gestion/sistema-gestion.compo
 import { CuentaComponent } from './cuenta/cuenta.component';
 import { GeneradorQRComponent } from './generador-qr/generador-qr.component';
 import { SubirAnuncioComponent } from './subir-anuncio/subir-anuncio.component';
+import { CapacitacionComponent } from './capacitacion/capacitacion.component';
+import { PrivacidadComponent } from './privacidad/privacidad.component';
 
 const routes: Routes = [
   {path:'', component:InicioComponent},
@@ -22,6 +24,8 @@ const routes: Routes = [
   {path:'MiCuenta',component:CuentaComponent},
   {path:'GeneradorQR',component:GeneradorQRComponent},
   {path:'SubidaAnuncio',component:SubirAnuncioComponent},
+  {path:'Capacitacion',component:CapacitacionComponent},
+  {path:'Privacidad',component:PrivacidadComponent},
   {path:'SistemaGestion/:area',component:SistemaGestionComponent},
   
 ];

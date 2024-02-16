@@ -1,6 +1,6 @@
 <h2 mat-dialog-title>Inicio de Sesion Red RCU</h2>
 <mat-dialog-content class="mat-typography">
-    <form (ngSubmit)="enviarFormulario()">
+    <form (ngSubmit)="enviarFormulario(myForm)" #myForm="ngForm">
         <label for="usuario">Usuario</label>
         <p>
             <mat-form-field appearance="fill">

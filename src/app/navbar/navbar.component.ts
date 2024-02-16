@@ -69,6 +69,9 @@ export class NavbarComponent {
       this.sesionIniciada=true;
       localStorage.setItem('user', JSON.stringify(this.perfil));
       this.toastr.success(this.perfil.TxtBDatos,"",{positionClass:'toast-bottom-right'});
+      setTimeout(()=>{
+        window.location.reload(); 
+      },2500);
     }
 
   }
@@ -93,6 +96,12 @@ export class NavbarComponent {
   }
   irASistemaGestion(Area: string) {
     this.router.navigate(['/SistemaGestion', Area]);
+  }
+  irACapacitacion(){
+    this.router.navigate(['/Capacitacion']);
+  }
+  irAPrivacidad(){
+    this.router.navigate(['/Privacidad']);
   }
   irAMiCuenta(){
     this.router.navigate(['/MiCuenta']);

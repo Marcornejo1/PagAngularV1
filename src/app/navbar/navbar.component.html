@@ -34,6 +34,10 @@
     </c-dropdown>
     <button cButton color="primary" (click)="irADirectorio()">Directorio</button>
     <span class="example-spacer"></span>
+    <button cButton color="primary" (click)="irACapacitacion()">Capacitacion</button>
+    <span class="example-spacer"></span>
+    <button cButton color="primary" (click)="irAPrivacidad()">Aviso de Privacidad</button>
+    <span class="example-spacer"></span>
     <div *ngIf="!sesionIniciada">
       <button cButton color="danger" shape="rounded-pill" (click)="openDialog()">Iniciar Sesion</button>
     </div>
@@ -66,35 +70,39 @@
         <c-navbar-nav *ngIf="perfil.ADAreaUsr==='Direccion Tecnologica'">
           <c-nav-item>
             <a cNavLink href="https://172.16.1.99/nms/devices" class="imgs" target="_blank"><img title="UNMS"
-                src="../../assets/img/UNMS_logo.png" class="imagenes"></a>
+                src="../../assets/img/UNMS-Logo.png" class="imagenes"></a>
             <a cNavLink
               href="https://unifi.ui.com/consoles/7483C21764050000000003F3474200000000041D11E4000000005CA2F976:937263058/network/default/devices"
               class="imgs" target="_blank"><img title="UNIFID" src="../../assets/img/UNIFID-Logo.png"
                 class="imagenes"></a>
           </c-nav-item>
-          <c-nav-item>
-            <a cNavLink
-              href="https://login.sophos.com/login.sophos.com/oauth2/v2.0/authorize?p=B2C_1A_signup_signin&cpent_id=d8ce821f-a1da-4b03-b7e2-1d1a9cc028f3&redirect_uri=https%3A%2F%2Fcentral.sophos.com%2Fmanage%2Flogin%2Fazureb2c&scope=openid&response_type=id_token&prompt=login&state="
-              class="imgs" target="_blank"><img title="Sophos Center" src="../../assets/img/Sophos_logo.png"
-                class="imagenes2"></a>
-            <a cNavLink href="https://172.16.105.2:8089/" class="imgs" target="_blank"><img title="Conmutador"
-                src="../../assets/img/Conmutador_logo.png" class="imagenes2"></a>
-          </c-nav-item>
+
           <c-nav-item>
             <a cNavLink href="https://servidorcorreoempresarial.com/login_up.php" class="imgs" target="_blank"><img
-                title="Correo Empresarial" src="../../assets/img/Plesk_logo.png" class="imagenes2"></a>
-            <a cNavLink href="https://172.16.120.178/cgi-bin/" class="imgs" target="_blank"><img title="QNAP"
-                src="../../assets/img/QNAP_logo.png" class="imagenes2"></a>
+                title="Correo Empresarial" src="../../assets/img/Plesk-logo.png" class="imagenes"></a>
+            <a cNavLink href="https://172.16.120.178:8443/cgi-bin/" class="imgs" target="_blank"><img title="QNAP"
+                src="../../assets/img/QNAP-logo.png" class="imagenes"></a>
           </c-nav-item>
+
+          <c-nav-item>
+            <a cNavLink
+              href="https://login.sophos.com/login.sophos.com/oauth2/v2.0/authorize?p=B2C_1A_signup_signin&client_id=d8ce821f-a1da-4b03-b7e2-1d1a9cc028f3&redirect_uri=https%3A%2F%2Fcentral.sophos.com%2Fmanage%2Flogin%2Fazureb2c&scope=openid&response_type=id_token&prompt=login&state="
+              class="imgs" target="_blank"><img title="Sophos Center" src="../../assets/img/Sophos-logo.png"
+                class="imagenes2"></a>
+            <a cNavLink href="https://172.16.105.2:8089/" class="imgs" target="_blank"><img title="Conmutador"
+                src="../../assets/img/Conmutador-logo.png" class="imagenes2"></a>
+          </c-nav-item>  
+
           <c-nav-item>
             <a cNavLink href="http://172.16.205.4/" class="imgs" target="_blank"><img title="Xorcom Central"
-                src="../../assets/img/Xorcom_logo.png" class="imagenes2"></a>
+                src="../../assets/img/Xorcom-logo.png" class="imagenes2"></a>
             <a cNavLink href="https://www.speedtest.net/es" class="imgs" target="_blank"><img
-                title="Test de Ancho de Banda" src="../../assets/img/Speedtest_logo.png" class="imagenes2"></a>
+                title="Test de Ancho de Banda" src="../../assets/img/Speedtest-logo.png" class="imagenes2"></a>
           </c-nav-item>
+
           <c-nav-item>
-            <a cNavLink href="https://touchoneapi.centralrcu.local/" class="img" target="_blank"><img title="TouchOne"
-                src=""></a>
+           <!-- <a cNavLink href="https://touchoneapi.centralrcu.local/" class="img" target="_blank"><img title="TouchOne"
+                src=""></a> -->
           </c-nav-item>
         </c-navbar-nav>
         <c-navbar-nav *ngIf="perfil.ADAreaUsr==='Logistica'">

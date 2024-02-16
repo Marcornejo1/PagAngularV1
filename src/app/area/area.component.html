@@ -8,13 +8,14 @@
             <li *ngFor="let archivo of archivos">
                 <div *ngIf="archivo.nombre !=='.' && archivo.nombre !=='..'">
                     <div *ngIf="archivo.tipo === 'application/pdf'">
-                        <p><a [href]="'http://rcu.intranet/Archivos/'+perfil.ADAreaUsr+'/'+archivo.nombre">{{
-                                archivo.nombre }}</a></p>
+                        <p><a [href]="'http://rcu.intranet/Archivos/'+perfil.ADAreaUsr+'/'+archivo.nombre">{{archivo.nombre }}</a></p>
                     </div>
-                    <div *ngIf="archivo.tipo !== 'application/pdf'">
-                        <p><a>{{archivo.nombre}}</a></p><button
-                            (click)="descargarArchivo(archivo.nombre)">Descargar</button>
-                    </div>
+                </div>
+            </li>
+            <h1 style="font-size: x-large;">Documentos Descargables:</h1>
+            <li *ngFor="let archivo of archivos">
+                <div *ngIf="archivo.tipo !== 'application/pdf'">
+                    <p><a (click)="descargarArchivo(archivo.nombre)">{{archivo.nombre}}</a>
                 </div>
             </li>
         </ul>

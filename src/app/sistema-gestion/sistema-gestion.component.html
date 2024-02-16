@@ -4,16 +4,20 @@
     </div>
     <div class="box">
         <ul>
-        <li *ngFor="let archivo of archivos">
-            <div *ngIf="archivo.nombre !=='.' && archivo.nombre !=='..'">
-                <div *ngIf="archivo.tipo === 'application/pdf'">
-                    <p><a [href]="'http://rcu.intranet/Archivos/'+area+'/'+archivo.nombre">{{ archivo.nombre }}</a></p>
+            <h1 style="font-size: x-large;">Documentos:</h1>
+            <li *ngFor="let archivo of archivos">
+                <div *ngIf="archivo.nombre !=='.' && archivo.nombre !=='..'">
+                    <div *ngIf="archivo.tipo === 'application/pdf'">
+                        <p><a [href]="'http://rcu.intranet/Archivos/'+area+'/'+archivo.nombre">{{archivo.nombre }}</a></p>
+                    </div>
                 </div>
+            </li>
+            <h1 style="font-size: x-large;">Documentos Descargables:</h1>
+            <li *ngFor="let archivo of archivos">
                 <div *ngIf="archivo.tipo !== 'application/pdf'">
-                    <p><a>{{archivo.nombre}}</a></p><button (click)="descargarArchivo(archivo.nombre)">Descargar</button>
+                    <p class="texto"><a (click)="descargarArchivo(archivo.nombre)">{{archivo.nombre}}</a>
                 </div>
-            </div>
-        </li>
+            </li>
         </ul>
     </div>
 </div>

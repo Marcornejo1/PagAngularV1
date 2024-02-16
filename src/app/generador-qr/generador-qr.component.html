@@ -15,6 +15,6 @@
         <qrcode (qrCodeURL)="onCodeChange($event)" [allowEmptyString]="true" [qrdata]="TextoQR" [width]="300"
             [errorCorrectionLevel]="'H'"></qrcode>
 
-        <a [href]="url" download="QrGenerado">Descargar Codigo QR</a>
+        <a [href]="url" download="Qr-{{QRInput}}">Descargar Codigo QR</a>
     </div>
 </div>

@@ -29,8 +29,11 @@ import { CuentaComponent } from './cuenta/cuenta.component';
 import { GeneradorQRComponent } from './generador-qr/generador-qr.component';
 import { QRCodeModule } from 'angularx-qrcode';
 import { SpinnerModule } from '@coreui/angular';
+import {MatTabsModule} from '@angular/material/tabs';
 import { QRCodeComponent } from 'angularx-qrcode/public-api';
 import { SubirAnuncioComponent } from './subir-anuncio/subir-anuncio.component';
+import { CapacitacionComponent } from './capacitacion/capacitacion.component';
+import { PrivacidadComponent } from './privacidad/privacidad.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +50,8 @@ import { SubirAnuncioComponent } from './subir-anuncio/subir-anuncio.component';
     CuentaComponent,
     GeneradorQRComponent,
     SubirAnuncioComponent,
+    CapacitacionComponent,
+    PrivacidadComponent,
 
   ],
   imports: [
@@ -74,6 +79,7 @@ import { SubirAnuncioComponent } from './subir-anuncio/subir-anuncio.component';
     MatTableModule,
     QRCodeModule,
     SpinnerModule,
+    MatTabsModule,
     ToastrModule.forRoot(),
 
   ],
