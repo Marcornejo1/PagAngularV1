@@ -13,7 +13,7 @@ export class InicioComponent {
     {id:'', nombre:'', tipo:'', rutaArchivos:''}
 
   ];
-  slides: any[] = new Array(3).fill({id: -1, src: '', title: '', subtitle: '', tipo:''});
+  slides: any[] = new Array(4).fill({id: -1, src: '', title: '', subtitle: '', tipo:''});
 
   constructor( private servicioAnuncios: AnunciosService, private router: Router) { 
     
@@ -27,6 +27,7 @@ export class InicioComponent {
       const Elemento1=this.multimedia[0];
       const Elemento2=this.multimedia[1];
       const Elemento3=this.multimedia[2];
+      const Elemento4=this.multimedia[3];
 
       this.slides[0]={
        // id:Elemento1.id,
@@ -52,6 +53,14 @@ export class InicioComponent {
         tipo:Elemento3.tipo,
       }
       console.log('Imagen 3:', this.multimedia[2]);
+      this.slides[3]={
+        src:Elemento4.rutaArchivo,
+        title:'En desarrollo',
+        subtitle:'Elemento en desarrollo',
+        tipo:Elemento4.tipo,
+      }
+      console.log('Medio 4: ', this.multimedia[3]);
+      
     });
   }
 
