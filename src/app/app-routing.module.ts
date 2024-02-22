@@ -12,6 +12,7 @@ import { GeneradorQRComponent } from './generador-qr/generador-qr.component';
 import { SubirAnuncioComponent } from './subir-anuncio/subir-anuncio.component';
 import { CapacitacionComponent } from './capacitacion/capacitacion.component';
 import { PrivacidadComponent } from './privacidad/privacidad.component';
+import { RecibosComponent } from './recibos/recibos.component';
 
 const routes: Routes = [
   {path:'', component:InicioComponent},
@@ -27,6 +28,7 @@ const routes: Routes = [
   {path:'Capacitacion',component:CapacitacionComponent},
   {path:'Privacidad',component:PrivacidadComponent},
   {path:'SistemaGestion/:area',component:SistemaGestionComponent},
+  {path:'Recibos',component:RecibosComponent},
   
 ];
 

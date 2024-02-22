@@ -8,7 +8,7 @@
             <li *ngFor="let archivo of archivos">
                 <div *ngIf="archivo.nombre !=='.' && archivo.nombre !=='..'">
                     <div *ngIf="archivo.tipo === 'application/pdf'">
-                        <p><a [href]="'http://rcu.intranet/Archivos/'+perfil.ADAreaUsr+'/'+archivo.nombre">{{archivo.nombre }}</a></p>
+                        <p><a [href]="'http://rcu.intranet/Archivos/SesionIniciada/'+perfil.ADAreaUsr+'/'+archivo.nombre">{{archivo.nombre }}</a></p>
                     </div>
                 </div>
             </li>

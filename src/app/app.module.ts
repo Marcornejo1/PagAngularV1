@@ -31,9 +31,12 @@ import { QRCodeModule } from 'angularx-qrcode';
 import { SpinnerModule } from '@coreui/angular';
 import {MatTabsModule} from '@angular/material/tabs';
 import { QRCodeComponent } from 'angularx-qrcode/public-api';
+import {CalendarModule} from 'primeng/calendar';
 import { SubirAnuncioComponent } from './subir-anuncio/subir-anuncio.component';
 import { CapacitacionComponent } from './capacitacion/capacitacion.component';
 import { PrivacidadComponent } from './privacidad/privacidad.component';
+
+import { RecibosComponent } from './recibos/recibos.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +55,8 @@ import { PrivacidadComponent } from './privacidad/privacidad.component';
     SubirAnuncioComponent,
     CapacitacionComponent,
     PrivacidadComponent,
-
+    RecibosComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -80,6 +84,7 @@ import { PrivacidadComponent } from './privacidad/privacidad.component';
     QRCodeModule,
     SpinnerModule,
     MatTabsModule,
+    CalendarModule,
     ToastrModule.forRoot(),
 
   ],

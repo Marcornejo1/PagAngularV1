@@ -1,0 +1,31 @@
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+
+.Contenedor {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    height: 100%;
+    background-image: url("../../assets/fondo_sistemas.jpg");
+    background-color: transparent;
+    height: 94%;
+    background-position: center;
+    overflow: hidden;
+
+    background-repeat: no-repeat;
+
+    background-size: cover;
+
+}
+
+.Contenido {
+    text-align: justify;
+    width: 85%;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    border-radius: 10px;
+}
