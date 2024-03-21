@@ -1,14 +1,37 @@
 <div class="Contenedor">
     <div class="block">
-        <div class="Contenido">
-            <h1 style="font-size: 50px; color:azure; padding-top: 10px;">Recibos: </h1>
-            <div class="card flex justify-content-center">
-                <span class="p-float-label">
-                    <p-calendar [(ngModel)]="date" view="month" inputId="Fecha" dateFormat="mm/yy"
-                        [readonlyInput]="true"></p-calendar>
-                    <label for="Fecha">Elegir Mes</label>
-                </span>
-            </div>
+        <h1 style="font-size: 50px; color:azure; padding-top: 10px;">Recibos: </h1>
+    </div>
+
+    <div class="Contenido">
+        <div class="card flex justify-content-center" style="flex-wrap: wrap; align-content: center;">
+            <span class="p-float-label" style="align-content: center;">
+                <p-calendar [(ngModel)]="selectedDate" (ngModelChange)="ElegirFecha($event)" view="month"
+                    inputId="Fecha" dateFormat="mm/yy" [readonlyInput]="true"></p-calendar>
+                <label for="Fecha">Elegir Mes</label>
+
+            </span>
+            <p>Fecha seleccionada: {{ selectedDate | date: 'MM/yyyy' }}</p>
+
+        </div>
+        <div>
+            <ul>
+                <div *ngIf="!tieneArchivo">
+                    <h1></h1>
+                </div>
+                <div *ngIf="tieneArchivo">
+                    <div *ngFor="let archivo of archivos">
+                        <li *ngIf="archivo.nombre !=='.' && archivo.nombre !=='..' && archivo.fecha==FormattedDate;">
+                            <p>{{archivo.fecha}}</p>
+                            <p><a
+                                    [href]="'http://rcu.intranet/Archivos/RFC-Recibos/'+perfil.Nivel+'s/'+perfil.RFC+'/'+archivo.nombre">{{archivo.nombre}}</a>
+                            </p>
+                        </li>
+                    </div>
+                </div>
+
+            </ul>
+
         </div>
     </div>
 </div>

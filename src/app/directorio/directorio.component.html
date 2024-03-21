@@ -4,11 +4,15 @@
         <p></p>
         <h1 style="font-size: 50px; color: azure; padding-top: 10px;">Directorio</h1>
     </div>
-    <div class="box">
+    <div class="box" style="justify-content: space-evenly;">
         <div style="text-align: center;">
+            <mat-form-field>
+                <mat-label>Filter</mat-label>
+                <input matInput (keyup)="applyFilter($event)" placeholder="Ej. Victor" #input>
+              </mat-form-field>
             <!-- <img src="../../assets/Proyecto_en_construccion.jpg" style="width: 500px; height: 400px;"> -->
-            <p>Direccion</p>
-            <table mat-table [dataSource]="dataSource1">
+            <p style="position: relative;font-weight: bold;bottom: 10px;">Direccion</p>
+            <table mat-table [dataSource]="dataSource1" style="border: 3px solid;">
                 <ng-container matColumnDef="Nombre">
                     <th mat-header-cell *matHeaderCellDef>Nombre</th>
                     <td mat-cell *matCellDef="let element">{{element.Nombre}}</td>
@@ -36,8 +40,8 @@
                     <td>Columna</td>
                 </tr>
             </table>
-            <p>Gerencia de Tesoreria</p>
-            <table mat-table [dataSource]="dataSource2">
+            <p style="position: relative;font-weight: bold;top:0px;bottom: 10px;">Gerencia de Tesoreria</p>
+            <table mat-table [dataSource]="dataSource2" style="border: 3px solid;">
                 <ng-container matColumnDef="Nombre">
                     <th mat-header-cell *matHeaderCellDef>Nombre</th>
                     <td mat-cell *matCellDef="let element">{{element.Nombre}}</td>
@@ -62,8 +66,8 @@
                 <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></tr>
                 <tr mat-row *matRowDef="let row; columns:displayedColumns"></tr>
             </table>
-            <p>Area de Compras</p>
-            <table mat-table [dataSource]="dataSource3">
+            <p style="position: relative;font-weight: bold;top:0px;bottom: 10px;">Area de Compras</p>
+            <table mat-table [dataSource]="dataSource3" style="border: 3px solid;">
                 <ng-container matColumnDef="Nombre">
                     <th mat-header-cell *matHeaderCellDef>Nombre</th>
                     <td mat-cell *matCellDef="let element">{{element.Nombre}}</td>
@@ -88,8 +92,8 @@
                 <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></tr>
                 <tr mat-row *matRowDef="let row; columns:displayedColumns"></tr>
             </table>
-            <p>Area de Almacen</p>
-            <table mat-table [dataSource]="dataSource4">
+            <p style="position: relative;font-weight: bold;top:0px;bottom: 10px;">Area de Almacen</p>
+            <table mat-table [dataSource]="dataSource4" style="border: 3px solid;">
                 <ng-container matColumnDef="Nombre">
                     <th mat-header-cell *matHeaderCellDef>Nombre</th>
                     <td mat-cell *matCellDef="let element">{{element.Nombre}}</td>
@@ -114,8 +118,8 @@
                 <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></tr>
                 <tr mat-row *matRowDef="let row; columns:displayedColumns"></tr>
             </table>
-            <p>Coordinacion de Recursos Humanos</p>
-            <table mat-table [dataSource]="dataSource5">
+            <p style="position: relative;font-weight: bold;top:0px;bottom: 10px;">Coordinacion de Recursos Humanos</p>
+            <table mat-table [dataSource]="dataSource5" style="border: 3px solid;">
                 <ng-container matColumnDef="Nombre">
                     <th mat-header-cell *matHeaderCellDef>Nombre</th>
                     <td mat-cell *matCellDef="let element">{{element.Nombre}}</td>
@@ -140,8 +144,8 @@
                 <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></tr>
                 <tr mat-row *matRowDef="let row; columns:displayedColumns"></tr>
             </table>
-            <p>Gerencia de Operaciones</p>
-            <table mat-table [dataSource]="dataSource6">
+            <p style="position: relative;font-weight: bold;top:0px;bottom: 10px;">Gerencia de Operaciones</p>
+            <table mat-table [dataSource]="dataSource6" style="border: 3px solid;">
                 <ng-container matColumnDef="Nombre">
                     <th mat-header-cell *matHeaderCellDef>Nombre</th>
                     <td mat-cell *matCellDef="let element">{{element.Nombre}}</td>
@@ -166,8 +170,8 @@
                 <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></tr>
                 <tr mat-row *matRowDef="let row; columns:displayedColumns"></tr>
             </table>
-            <p>Gerencia de Tecnologia</p>
-            <table mat-table [dataSource]="dataSource7">
+            <p style="position: relative;font-weight: bold;top:0px;bottom: 10px;">Gerencia de Tecnologia</p>
+            <table mat-table [dataSource]="dataSource7" style="border: 3px solid;">
                 <ng-container matColumnDef="Nombre">
                     <th mat-header-cell *matHeaderCellDef>Nombre</th>
                     <td mat-cell *matCellDef="let element">{{element.Nombre}}</td>
@@ -192,8 +196,8 @@
                 <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></tr>
                 <tr mat-row *matRowDef="let row; columns:displayedColumns"></tr>
             </table>
-            <p>Area de Infomeca</p>
-            <table mat-table [dataSource]="dataSource8">
+            <p style="position: relative;font-weight: bold;top:0px;bottom: 10px;">Area de Infomeca</p>
+            <table mat-table [dataSource]="dataSource8" style="border: 3px solid;">
                 <ng-container matColumnDef="Nombre">
                     <th mat-header-cell *matHeaderCellDef>Nombre</th>
                     <td mat-cell *matCellDef="let element">{{element.Nombre}}</td>
@@ -218,8 +222,8 @@
                 <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></tr>
                 <tr mat-row *matRowDef="let row; columns:displayedColumns"></tr>
             </table>
-            <p>Gerencia de Implementacion (Refugios)</p>
-            <table mat-table [dataSource]="dataSource9">
+            <p style="position: relative;font-weight: bold;top:0px;bottom: 10px;">Gerencia de Implementacion (Refugios)</p>
+            <table mat-table [dataSource]="dataSource9" style="border: 3px solid;">
                 <ng-container matColumnDef="Nombre">
                     <th mat-header-cell *matHeaderCellDef>Nombre</th>
                     <td mat-cell *matCellDef="let element">{{element.Nombre}}</td>
@@ -244,8 +248,8 @@
                 <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></tr>
                 <tr mat-row *matRowDef="let row; columns:displayedColumns"></tr>
             </table>
-            <p>Gerencia de Comercializacion</p>
-            <table mat-table [dataSource]="dataSource10">
+            <p style="position: relative;font-weight: bold;top:0px;bottom: 10px;">Gerencia de Comercializacion</p>
+            <table mat-table [dataSource]="dataSource10" style="border: 3px solid;">
                 <ng-container matColumnDef="Nombre">
                     <th mat-header-cell *matHeaderCellDef>Nombre</th>
                     <td mat-cell *matCellDef="let element">{{element.Nombre}}</td>
@@ -270,8 +274,8 @@
                 <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></tr>
                 <tr mat-row *matRowDef="let row; columns:displayedColumns"></tr>
             </table>
-            <p>Gerencia de Seguridad</p>
-            <table mat-table [dataSource]="dataSource11">
+            <p style="position: relative;font-weight: bold;top:0px;bottom: 10px;">Gerencia de Seguridad</p>
+            <table mat-table [dataSource]="dataSource11" style="border: 3px solid;">
                 <ng-container matColumnDef="Nombre">
                     <th mat-header-cell *matHeaderCellDef>Nombre</th>
                     <td mat-cell *matCellDef="let element">{{element.Nombre}}</td>
@@ -296,8 +300,8 @@
                 <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></tr>
                 <tr mat-row *matRowDef="let row; columns:displayedColumns"></tr>
             </table>
-            <p>Gerencia de Proyectos</p>
-            <table mat-table [dataSource]="dataSource12">
+            <p style="position: relative;font-weight: bold;top:0px;bottom: 10px;">Gerencia de Proyectos</p>
+            <table mat-table [dataSource]="dataSource12" style="border: 3px solid;">
                 <ng-container matColumnDef="Nombre">
                     <th mat-header-cell *matHeaderCellDef>Nombre</th>
                     <td mat-cell *matCellDef="let element">{{element.Nombre}}</td>
@@ -322,8 +326,8 @@
                 <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></tr>
                 <tr mat-row *matRowDef="let row; columns:displayedColumns"></tr>
             </table>
-            <p>Gerencia de Monitoreo</p>
-            <table mat-table [dataSource]="dataSource13">
+            <p style="position: relative;font-weight: bold;top:0px;bottom: 10px;">Gerencia de Monitoreo</p>
+            <table mat-table [dataSource]="dataSource13" style="border: 3px solid;">
                 <ng-container matColumnDef="Nombre">
                     <th mat-header-cell *matHeaderCellDef>Nombre</th>
                     <td mat-cell *matCellDef="let element">{{element.Nombre}}</td>
@@ -348,8 +352,8 @@
                 <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></tr>
                 <tr mat-row *matRowDef="let row; columns:displayedColumns"></tr>
             </table>
-            <p>Humanismo y Legalidad</p>
-            <table mat-table [dataSource]="dataSource14">
+            <p style="position: relative;font-weight: bold;top:0px;bottom: 10px;">Humanismo y Legalidad</p>
+            <table mat-table [dataSource]="dataSource14" style="border: 3px solid;">
                 <ng-container matColumnDef="Nombre">
                     <th mat-header-cell *matHeaderCellDef>Nombre</th>
                     <td mat-cell *matCellDef="let element">{{element.Nombre}}</td>
@@ -374,8 +378,8 @@
                 <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></tr>
                 <tr mat-row *matRowDef="let row; columns:displayedColumns"></tr>
             </table>
-            <p>Psicologia</p>
-            <table mat-table [dataSource]="dataSource15">
+            <p style="position: relative;font-weight: bold;top:0px;bottom: 10px;">Psicologia</p>
+            <table mat-table [dataSource]="dataSource15" style="border: 3px solid;">
                 <ng-container matColumnDef="Nombre">
                     <th mat-header-cell *matHeaderCellDef>Nombre</th>
                     <td mat-cell *matCellDef="let element">{{element.Nombre}}</td>
@@ -400,8 +404,8 @@
                 <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></tr>
                 <tr mat-row *matRowDef="let row; columns:displayedColumns"></tr>
             </table>
-            <p>Servicios Generales (Mantenimiento)</p>
-            <table mat-table [dataSource]="dataSource16">
+            <p style="position: relative;font-weight: bold;top:0px;bottom: 10px;">Servicios Generales (Mantenimiento)</p>
+            <table mat-table [dataSource]="dataSource16" style="border: 3px solid;">
                 <ng-container matColumnDef="Nombre">
                     <th mat-header-cell *matHeaderCellDef>Nombre</th>
                     <td mat-cell *matCellDef="let element">{{element.Nombre}}</td>
@@ -426,8 +430,8 @@
                 <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></tr>
                 <tr mat-row *matRowDef="let row; columns:displayedColumns"></tr>
             </table>
-            <p>Intendencia</p>
-            <table mat-table [dataSource]="dataSource17">
+            <p style="position: relative;font-weight: bold;top:0px;bottom: 10px;">Intendencia</p>
+            <table mat-table [dataSource]="dataSource17" style="border: 3px solid;">
                 <ng-container matColumnDef="Nombre">
                     <th mat-header-cell *matHeaderCellDef>Nombre</th>
                     <td mat-cell *matCellDef="let element">{{element.Nombre}}</td>
@@ -452,8 +456,8 @@
                 <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></tr>
                 <tr mat-row *matRowDef="let row; columns:displayedColumns"></tr>
             </table>
-            <p>Comedor</p>
-            <table mat-table [dataSource]="dataSource18">
+            <p style="position: relative;font-weight: bold;top:0px;bottom: 10px;">Comedor</p>
+            <table mat-table [dataSource]="dataSource18" style="border: 3px solid;">
                 <ng-container matColumnDef="Nombre">
                     <th mat-header-cell *matHeaderCellDef>Nombre</th>
                     <td mat-cell *matCellDef="let element">{{element.Nombre}}</td>
@@ -478,8 +482,8 @@
                 <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></tr>
                 <tr mat-row *matRowDef="let row; columns:displayedColumns"></tr>
             </table>
-            <p>Vino y se Fue</p>
-            <table mat-table [dataSource]="dataSource19">
+            <p style="position: relative;font-weight: bold;top:0px;bottom: 10px;">Vino y se Fue</p>
+            <table mat-table [dataSource]="dataSource19" style="border: 3px solid;">
                 <ng-container matColumnDef="Nombre">
                     <th mat-header-cell *matHeaderCellDef>Nombre</th>
                     <td mat-cell *matCellDef="let element">{{element.Nombre}}</td>
@@ -504,42 +508,42 @@
                 <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></tr>
                 <tr mat-row *matRowDef="let row; columns:displayedColumns"></tr>
             </table>
-            <p>LINEA TELEFONICA DE RCU</p>
+            <p style="align-self: center; font-weight: bold;">LINEA TELEFONICA DE RCU</p>
             <P>5555384800</P>
-                <table class="default">
-                    <tr>
-                        <th>RCU CANCUN</th>
-                    </tr>
+            <table class="table2">
+                <tr>
+                    <th style="border: 3px solid;">RCU CANCUN</th>
+                </tr>
 
-                    <tr>
-                        <td>Alejandro Gonzalez Plata</td>
-                    </tr>
+                <tr>
+                    <td>Alejandro Gonzalez Plata</td>
+                </tr>
 
-                    <tr>
-                        <td>gplata"&#64;"rcucancun.com</td>
-                    </tr>
+                <tr>
+                    <td>gplata"&#64;"rcucancun.com</td>
+                </tr>
 
-                    <tr>
-                        <td>www.rcucancun.mx</td>
-                    </tr>
+                <tr>
+                    <td>www.rcucancun.mx</td>
+                </tr>
 
-                    <tr>
-                        <th>Tel. Oficina</th>
-                    </tr>
+                <tr>
+                    <th style="border: 3px solid;">Tel. Oficina</th>
+                </tr>
 
-                    <tr>
-                        <td>9988922000</td>
-                    </tr>
+                <tr>
+                    <td>9988922000</td>
+                </tr>
 
-                    <tr>
-                        <td>9988848334</td>
-                    </tr>
+                <tr>
+                    <td>9988848334</td>
+                </tr>
 
-                    <tr>
-                        <td>9988849358</td>
-                    </tr>
-                </table>
-                
+                <tr>
+                    <td>9988849358</td>
+                </tr>
+            </table>
+
 
         </div>
     </div>

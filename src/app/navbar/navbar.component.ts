@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output,Injectable } from '@angular/core';
+import { Component, EventEmitter, Output, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { EmpleadosService } from '../empleados.service';
 import { MatDialog } from '@angular/material/dialog';
@@ -19,30 +19,32 @@ export class NavbarComponent {
     ADUser: "",
     ADAreaUsr: "Visita",
     SesInic: "",
+    RFC: "",
   }
   @Output() salida = new EventEmitter<boolean>();
 
-  constructor(private router: Router, private empleadosServicio: EmpleadosService, public dialog: MatDialog, private toastr:ToastrService) {
-    
+  constructor(private router: Router, private empleadosServicio: EmpleadosService, public dialog: MatDialog, private toastr: ToastrService) {
+
     const SessionValue = localStorage.getItem('user');
-    this.perfil=SessionValue;
-    this.perfil=JSON.parse(this.perfil);
-    
+    this.perfil = SessionValue;
+    this.perfil = JSON.parse(this.perfil);
+
     //console.log('Hola: ',SessionValue);
     if (SessionValue?.includes('"SesInic":""') || SessionValue?.includes('"SesInic":"NO"')) {
-     // console.log("No existe sesion Iniciada");
+      // console.log("No existe sesion Iniciada");
       const initialSessionObject: any = {
         Respuesta: 'Predeterminada',
         ADUser: '',
         ADAreaUsr: 'Visita',
         SesInic: "NO",
+        RFC: '',
       };
       localStorage.setItem('user', JSON.stringify(initialSessionObject));
-      this.sesionIniciada=false;
+      this.sesionIniciada = false;
     }
     else {
-     // console.log("Ya hay una session iniciada: " + localStorage.getItem('user'));
-      this.sesionIniciada=true
+      // console.log("Ya hay una session iniciada: " + localStorage.getItem('user'));
+      this.sesionIniciada = true
     }
 
   }
@@ -51,29 +53,34 @@ export class NavbarComponent {
     const dialogRef = this.dialog.open(LoginComponent, {
       data: {}
     });
-    dialogRef.beforeClosed().subscribe(result=>{
+    dialogRef.beforeClosed().subscribe(result => {
       this.verifDatos();
     })
   }
 
-  verifDatos(){
+  verifDatos() {
     localStorage.setItem('user', JSON.stringify(this.empleadosServicio.DatosPerfil));
-    this.perfil = localStorage.getItem('user'); 
-    this.perfil=JSON.parse(this.perfil);
+    this.perfil = localStorage.getItem('user');
+    this.perfil = JSON.parse(this.perfil);
     //console.log("Dialog cerrado: ",this.perfil);
-    this.start=this.perfil.SesInic;
-    
+    this.start = this.perfil.SesInic;
 
-    if(this.start=="SI"){
+
+    if (this.start == "SI") {
       //console.log("SI: ",this.perfil);
-      this.sesionIniciada=true;
+      this.sesionIniciada = true;
       localStorage.setItem('user', JSON.stringify(this.perfil));
-      this.toastr.success(this.perfil.TxtBDatos,"",{positionClass:'toast-bottom-right'});
-      setTimeout(()=>{
-        window.location.reload(); 
-      },2500);
+      this.toastr.success(this.perfil.TxtBDatos, "", { positionClass: 'toast-bottom-right' });
+      setTimeout(() => {
+        window.location.reload();
+      }, 2500);
     }
 
+  }
+
+
+  IraRecibos() {
+    this.router.navigate(['/Recibos'])
   }
 
   irAInicio() {
@@ -97,26 +104,26 @@ export class NavbarComponent {
   irASistemaGestion(Area: string) {
     this.router.navigate(['/SistemaGestion', Area]);
   }
-  irACapacitacion(){
+  irACapacitacion() {
     this.router.navigate(['/Capacitacion']);
   }
-  irAPrivacidad(){
+  irAPrivacidad() {
     this.router.navigate(['/Privacidad']);
   }
-  irAMiCuenta(){
+  irAMiCuenta() {
     this.router.navigate(['/MiCuenta']);
   }
 
-  IrAQR(){
+  IrAQR() {
     this.router.navigate(['/GeneradorQR']);
-   }
+  }
 
-   IrASA(){
+  IrASA() {
     this.router.navigate(['/SubidaAnuncio']);
-   }
+  }
 
-  Logout(){
-    this.empleadosServicio.cerrarSesion().subscribe(resp=>{
+  Logout() {
+    this.empleadosServicio.cerrarSesion().subscribe(resp => {
       //console.log(resp);
       this.sesionIniciada = false;
       this.start = "NO";
@@ -127,13 +134,13 @@ export class NavbarComponent {
         SesInic: "",
       };
       localStorage.setItem('user', JSON.stringify(this.perfil));
-      this.toastr.warning("Se cerro la sesion","",{positionClass:'toast-bottom-right'})
+      this.toastr.warning("Se cerro la sesion", "", { positionClass: 'toast-bottom-right' })
       //console.log(this.start);
-      setTimeout(()=>{
-        window.location.reload(); 
-      },1000);
-      
-      
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);
+
+
     });
   }
 

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-directorio',
@@ -6,26 +7,49 @@ import { Component } from '@angular/core';
   styleUrl: './directorio.component.scss'
 })
 export class DirectorioComponent {
-  displayedColumns=['Nombre','Area','Extension','Correo','Telefono'];
-  dataSource1=ELEMENT_DATA1;
-  dataSource2=ELEMENT_DATA2;
-  dataSource3=ELEMENT_DATA3;
-  dataSource4=ELEMENT_DATA4;
-  dataSource5=ELEMENT_DATA5;
-  dataSource6=ELEMENT_DATA6;
-  dataSource7=ELEMENT_DATA7;
-  dataSource8=ELEMENT_DATA8;
-  dataSource9=ELEMENT_DATA9;
-  dataSource10=ELEMENT_DATA10;
-  dataSource11=ELEMENT_DATA11;
-  dataSource12=ELEMENT_DATA12;
-  dataSource13=ELEMENT_DATA13;
-  dataSource14=ELEMENT_DATA14;
-  dataSource15=ELEMENT_DATA15;
-  dataSource16=ELEMENT_DATA16;
-  dataSource17=ELEMENT_DATA17;
-  dataSource18=ELEMENT_DATA18;
-  dataSource19=ELEMENT_DATA19;
+  displayedColumns:string[]=['Nombre','Area','Extension','Correo','Telefono'];
+  dataSource1=new MatTableDataSource(ELEMENT_DATA1);
+  dataSource2=new MatTableDataSource(ELEMENT_DATA2);
+  dataSource3=new MatTableDataSource(ELEMENT_DATA3);
+  dataSource4=new MatTableDataSource(ELEMENT_DATA4);
+  dataSource5=new MatTableDataSource(ELEMENT_DATA5);
+  dataSource6=new MatTableDataSource(ELEMENT_DATA6);
+  dataSource7=new MatTableDataSource(ELEMENT_DATA7);
+  dataSource8=new MatTableDataSource(ELEMENT_DATA8);
+  dataSource9=new MatTableDataSource(ELEMENT_DATA9);
+  dataSource10=new MatTableDataSource(ELEMENT_DATA10);
+  dataSource11=new MatTableDataSource(ELEMENT_DATA11);
+  dataSource12=new MatTableDataSource(ELEMENT_DATA12);
+  dataSource13=new MatTableDataSource(ELEMENT_DATA13);
+  dataSource14=new MatTableDataSource(ELEMENT_DATA14);
+  dataSource15=new MatTableDataSource(ELEMENT_DATA15);
+  dataSource16=new MatTableDataSource(ELEMENT_DATA16);
+  dataSource17=new MatTableDataSource(ELEMENT_DATA17);
+  dataSource18=new MatTableDataSource(ELEMENT_DATA18);
+  dataSource19=new MatTableDataSource(ELEMENT_DATA19);
+
+  applyFilter(event:Event){
+    const filterValue=(event.target as HTMLInputElement).value;
+    this.dataSource1.filter=filterValue.trim().toLowerCase();
+    this.dataSource2.filter=filterValue.trim().toLowerCase();
+    this.dataSource3.filter=filterValue.trim().toLowerCase();
+    this.dataSource4.filter=filterValue.trim().toLowerCase();
+    this.dataSource5.filter=filterValue.trim().toLowerCase();
+    this.dataSource6.filter=filterValue.trim().toLowerCase();
+    this.dataSource7.filter=filterValue.trim().toLowerCase();
+    this.dataSource8.filter=filterValue.trim().toLowerCase();
+    this.dataSource9.filter=filterValue.trim().toLowerCase();
+    this.dataSource10.filter=filterValue.trim().toLowerCase();
+    this.dataSource11.filter=filterValue.trim().toLowerCase();
+    this.dataSource12.filter=filterValue.trim().toLowerCase();
+    this.dataSource13.filter=filterValue.trim().toLowerCase();
+    this.dataSource14.filter=filterValue.trim().toLowerCase();
+    this.dataSource15.filter=filterValue.trim().toLowerCase();
+    this.dataSource16.filter=filterValue.trim().toLowerCase();
+    this.dataSource17.filter=filterValue.trim().toLowerCase();
+    this.dataSource18.filter=filterValue.trim().toLowerCase();
+    this.dataSource19.filter=filterValue.trim().toLowerCase();
+  }
 }
 
 export interface Directorio{
@@ -125,11 +149,11 @@ const ELEMENT_DATA6:Directorio[]=[
 const ELEMENT_DATA7:Directorio[]=[
   {Nombre:'SALVADOR AYALA',Area:'GERENTE',Extension:171,Correo:'N/A',Telefono:'N/A'},
   {Nombre:'ABRAHAM GONZÁLEZ GONZÁLEZ',Area:'COORDINACION DE INFORMÁTICA',Extension:174,Correo:'agonzalez@rcu.com.mx',Telefono:'5581031129'},
-  {Nombre:'JUAN CARLOS NACIF',Area:'N/A',Extension:0,Correo:'N/A',Telefono:'N/A'},
+  {Nombre:'JUAN CARLOS NACIF',Area:'JEFE DE SERVIDORES Y VIRTUALIZACION',Extension:0,Correo:'jnacif@rcu.com.mc',Telefono:'5566968039'},
   {Nombre:'ALEJANDRO ROMERO PACHECO',Area:'JEFATURA SOPORTE TECNICO DE SISTEMAS',Extension:137,Correo:'aromero@rcu.com.mx',Telefono:'5545555986'},
   {Nombre:'FREDDY RUIZ',Area:'COORDINACIÓN DE INFRAESTRUCTURA',Extension:173,Correo:'N/A',Telefono:'N/A'},
-  {Nombre:'DANIEL MARVAN',Area:'AUX. DE SOPRTE TECNICO',Extension:0,Correo:'',Telefono:''},
-  {Nombre:'NATALY MORENO',Area:'ANALISTA DE PROCESOS',Extension:0,Correo:'nmoreno@rcu.com',Telefono:'n/a'},
+  {Nombre:'DANIEL MARVAN',Area:'AUX. DE SOPRTE TECNICO',Extension:0,Correo:'N/A',Telefono:'N/A'},
+  {Nombre:'NATALY MORENO',Area:'ANALISTA DE PROCESOS',Extension:0,Correo:'nmoreno@rcu.com',Telefono:'N/A'},
   {Nombre:'MARCO CORNEJO',Area:'BECARIO',Extension:0,Correo:'N/A',Telefono:'N/A'},
 ]
 
@@ -261,3 +285,5 @@ const ELEMENT_DATA19:Directorio[]=[
   {Nombre:'ALEJANDRA ROMERO',Area:'N/A',Extension:0,Correo:'N/A',Telefono:'5541901990'}, 
   {Nombre:'FRANCISCO ALANÍS ARTEAGA',Area:'MANTENIMIENTO RESTAURANTES',Extension:0,Correo:'palanis@rcu.com.mx',Telefono:'5514520393'}, 
 ]
+
+

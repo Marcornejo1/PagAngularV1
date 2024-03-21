@@ -1,13 +1,27 @@
 @import "../../../node_modules/bulma/css/bulma-rtl.min.css";
+
 .Contenedor {
     min-height: 100vh;
     width: auto;
     height: auto;
     background-image: url("../../assets/fondo_sistemas.jpg");
-            background-color: transparent;
-           
-            background-repeat: no-repeat;
+    background-color: transparent;
 
-            background-size: cover;
+    background-repeat: no-repeat;
+
+    background-size: cover;
+
+}
+
+table {
+    width: 75vw;
     
-  }
+}
+
+.table2 {
+    width: 40vw;
+    position: relative;
+    left: 0%;
+    top: 20px;
+    border: 2px solid;
+}

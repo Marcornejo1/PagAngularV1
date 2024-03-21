@@ -4,8 +4,8 @@
     <button cButton color="primary" (click)="irAInicio()"><img src="../assets/img/logotipo.png" width="125"
         height="50"></button>
     <span class="example-spacer"></span>
-    <button cButton color="primary" (click)="irAInformacion()">Acerca De</button>
-    <span class="example-spacer"></span>
+   <!--  <button cButton color="primary" (click)="irAInformacion()">Acerca De</button>
+    <span class="example-spacer"></span> -->
     <button cButton color="primary" (click)="irAMisVis()">Mision/Vision</button>
     <span class="example-spacer"></span>
     <button cButton color="primary" (click)="irAArea()">Area</button>
@@ -69,6 +69,10 @@
         </c-navbar-nav>
         <c-navbar-nav *ngIf="perfil.ADAreaUsr==='Direccion Tecnologica'">
           <c-nav-item>
+            <a cNavLink (click)="IraRecibos()" class="imgs"><img title="Recibos" class="imagenes" src="../../assets/img/IconoRecibos.png"></a>
+          </c-nav-item>
+
+          <c-nav-item>
             <a cNavLink href="https://172.16.1.99/nms/devices" class="imgs" target="_blank"><img title="UNMS"
                 src="../../assets/img/UNMS-Logo.png" class="imagenes"></a>
             <a cNavLink
@@ -107,72 +111,75 @@
         </c-navbar-nav>
         <c-navbar-nav *ngIf="perfil.ADAreaUsr==='Logistica'">
           <c-nav-item>
-            <img class="imagenSideNav" src="../../assets/img/Proyecto_en_construccion.jpg">
+            <a cNavLink (click)="IraRecibos()" class="imgs"><img title="Recibos" class="imagenes" src="../../assets/img/IconoRecibos.png"></a>
           </c-nav-item>
+          
         </c-navbar-nav>
         <c-navbar-nav *ngIf="perfil.ADAreaUsr==='Contabilidad y Tesoreria'">
           <c-nav-item>
-            <img class="imagenSideNav" src="../../assets/img/Proyecto_en_construccion.jpg">
+            <a cNavLink (click)="IraRecibos()" class="imgs"><img title="Recibos" class="imagenes" src="../../assets/img/IconoRecibos.png"></a>
           </c-nav-item>
         </c-navbar-nav>
         <c-navbar-nav *ngIf="perfil.ADAreaUsr==='Direccion de Proyectos'">
           <c-nav-item>
-            <img class="imagenSideNav" src="../../assets/img/Proyecto_en_construccion.jpg">
+            <a cNavLink (click)="IraRecibos()" class="imgs"><img title="Recibos" class="imagenes" src="../../assets/img/IconoRecibos.png"></a>
           </c-nav-item>
         </c-navbar-nav>
         <c-navbar-nav *ngIf="perfil.ADAreaUsr==='Direccion General'">
           <c-nav-item>
-            <img class="imagenSideNav" src="../../assets/img/Proyecto_en_construccion.jpg">
+            <a cNavLink (click)="IraRecibos()" class="imgs"><img title="Recibos" class="imagenes" src="../../assets/img/IconoRecibos.png"></a>
           </c-nav-item>
         </c-navbar-nav>
         <c-navbar-nav *ngIf="perfil.ADAreaUsr==='Direccion Operativa'">
           <c-nav-item>
-            <img class="imagenSideNav" src="../../assets/img/Proyecto_en_construccion.jpg">
+            <a cNavLink (click)="IraRecibos()" class="imgs"><img title="Recibos" class="imagenes" src="../../assets/img/IconoRecibos.png"></a>
           </c-nav-item>
         </c-navbar-nav>
         <c-navbar-nav *ngIf="perfil.ADAreaUsr==='Almacen'">
           <c-nav-item>
-            <img class="imagenSideNav" src="../../assets/img/Proyecto_en_construccion.jpg">
+            <a cNavLink (click)="IraRecibos()" class="imgs"><img title="Recibos" class="imagenes" src="../../assets/img/IconoRecibos.png"></a>
           </c-nav-item>
         </c-navbar-nav>
         <c-navbar-nav *ngIf="perfil.ADAreaUsr==='Operativos'">
           <c-nav-item>
-            <img class="imagenSideNav" src="../../assets/img/Proyecto_en_construccion.jpg">
+            <a cNavLink (click)="IraRecibos()" class="imgs"><img title="Recibos" class="imagenes" src="../../assets/img/IconoRecibos.png"></a>
           </c-nav-item>
         </c-navbar-nav>
         <c-navbar-nav *ngIf="perfil.ADAreaUsr==='Central'">
           <c-nav-item>
-            <img class="imagenSideNav" src="../../assets/img/Proyecto_en_construccion.jpg">
+            <a cNavLink (click)="IraRecibos()" class="imgs"><img title="Recibos" class="imagenes" src="../../assets/img/IconoRecibos.png"></a>
           </c-nav-item>
         </c-navbar-nav>
         <c-navbar-nav *ngIf="perfil.ADAreaUsr==='Control y Seguimiento'">
           <c-nav-item>
-            <img class="imagenSideNav" src="../../assets/img/Proyecto_en_construccion.jpg">
+            <a cNavLink (click)="IraRecibos()" class="imgs"><img title="Recibos" class="imagenes" src="../../assets/img/IconoRecibos.png"></a>
           </c-nav-item>
         </c-navbar-nav>
         <c-navbar-nav *ngIf="perfil.ADAreaUsr==='Infomeca'">
           <c-nav-item>
-            <img class="imagenSideNav" src="../../assets/img/Proyecto_en_construccion.jpg">
+            <a cNavLink (click)="IraRecibos()" class="imgs"><img title="Recibos" class="imagenes" src="../../assets/img/IconoRecibos.png"></a>
           </c-nav-item>
         </c-navbar-nav>
         <c-navbar-nav *ngIf="perfil.ADAreaUsr==='Refugios'">
           <c-nav-item>
-            <img class="imagenSideNav" src="../../assets/img/Proyecto_en_construccion.jpg">
+            <a cNavLink (click)="IraRecibos()" class="imgs"><img title="Recibos" class="imagenes" src="../../assets/img/IconoRecibos.png"></a>
           </c-nav-item>
         </c-navbar-nav>
         <c-navbar-nav *ngIf="perfil.ADAreaUsr==='Mantenimiento'">
           <c-nav-item>
-            <img class="imagenSideNav" src="../../assets/img/Proyecto_en_construccion.jpg">
+            <a cNavLink (click)="IraRecibos()" class="imgs"><img title="Recibos" class="imagenes" src="../../assets/img/IconoRecibos.png"></a>
           </c-nav-item>
         </c-navbar-nav>
         <c-navbar-nav *ngIf="perfil.ADAreaUsr==='Recursos Humanos'">
           <c-nav-item>
+            <a cNavLink (click)="IraRecibos()" class="imgs"><img title="Recibos" class="imagenes" src="../../assets/img/IconoRecibos.png"></a>
+          </c-nav-item>
+
+          <c-nav-item>
             <a cNavLink title="Generador de Codigo QR" (click)="IrAQR()"><img src="../../assets/img/CodigoQR-Logo.png" class="imagenes2"></a>
             <a title="SubirArchivo" (click)="IrASA()"><img src="../../assets/img/subirArchivoIcono.png" class="imagenes2"></a>
-            
           </c-nav-item>
         </c-navbar-nav>
-
 
       </c-offcanvas-body>
     </c-offcanvas>
