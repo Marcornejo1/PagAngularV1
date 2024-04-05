@@ -57,5 +57,13 @@ export class RecibosComponent {
         console.error('Error: ', error);
       });
   }
+
+  descargarArchivo(nombreArchivo:string):void{
+    const rutaArchivo='http://rcu.intranet/Archivos/RFC-Recibos'+this.perfil.Nivel+'s/'+this.perfil.RFC+'/'+nombreArchivo;
+    const link=document.createElement('a');
+    link.href=rutaArchivo;
+    link.download=nombreArchivo;
+    link.click();
+  }
 }
 

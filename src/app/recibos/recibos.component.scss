@@ -31,3 +31,12 @@
     background: white;
     border-radius: 10px;
 }
+.Descarga{
+    color: black;
+    transition: color 0.2s ease;
+}
+
+.Descarga:hover{
+    color:blueviolet;
+    cursor: pointer;
+}

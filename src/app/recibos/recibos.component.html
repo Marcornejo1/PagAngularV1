@@ -21,11 +21,18 @@
                 </div>
                 <div *ngIf="tieneArchivo">
                     <div *ngFor="let archivo of archivos">
-                        <li *ngIf="archivo.nombre !=='.' && archivo.nombre !=='..' && archivo.fecha==FormattedDate;">
+                        <li *ngIf="archivo.nombre !=='.' && archivo.nombre !=='..' && archivo.fecha===FormattedDate;">
                             <p>{{archivo.fecha}}</p>
-                            <p><a
-                                    [href]="'http://rcu.intranet/Archivos/RFC-Recibos/'+perfil.Nivel+'s/'+perfil.RFC+'/'+archivo.nombre">{{archivo.nombre}}</a>
-                            </p>
+                            <div *ngIf="archivo.tipo==='application/pdf'">
+                                <p>
+                                    <a [href]="'http://rcu.intranet/Archivos/RFC-Recibos/'+perfil.Nivel+'s/'+perfil.RFC+'/'+archivo.nombre">{{archivo.nombre}}</a>
+                                </p>
+                            </div>
+                            <div *ngIf="archivo.tipo==='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'">
+                                <p>
+                                    <p class="Descarga"><a title="Descargar" (click)="descargarArchivo(archivo.nombre)">{{archivo.nombre}}</a>
+                                </p>
+                            </div>
                         </li>
                     </div>
                 </div>

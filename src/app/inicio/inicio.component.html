@@ -10,7 +10,7 @@
           <c-carousel-indicators></c-carousel-indicators>
           <c-carousel-inner>
             <c-carousel-item *ngFor="let slide of slides">
-
+              
               <div *ngIf="slide.tipo==='image/jpeg'">
                 <img [src]="slide.src" alt="{{ slide.title }}" class="img-container" loading="lazy" />
               </div>

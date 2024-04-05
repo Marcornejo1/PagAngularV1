@@ -14,8 +14,9 @@ export class ArchivosService {
   constructor(private http: HttpClient) { }
 
   //Aqui va el metodo para obtener la lista de archivos
-  obtenerArchivos(): Observable<string[]> {
-    return this.http.get<string[]>(this.apiUrl);
+  obtenerArchivos(area:string): Observable<string[]> {
+    const data={area:area}
+    return this.http.post<string[]>(this.apiUrl,data);
   }
 
   ArchivosSistemaGestion(area: string): Observable<string[]> {

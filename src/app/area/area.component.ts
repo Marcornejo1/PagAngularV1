@@ -11,6 +11,7 @@ import { ArchivosService } from '../archivos.service';
 export class AreaComponent {
   perfil: any;
   archivos: any[] = [];
+  Area:any;
   constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router, private servicioArchivos: ArchivosService) {
     console.clear();
     const SessionValue = localStorage.getItem('user');
@@ -18,8 +19,10 @@ export class AreaComponent {
     this.perfil = SessionValue;
     this.perfil = JSON.parse(this.perfil);
     console.error(this.perfil);
+    this.Area=this.perfil.ADAreaUsr;
+    console.log('Area: ',this.Area);
     
-    this.servicioArchivos.obtenerArchivos().subscribe(data => {
+    this.servicioArchivos.obtenerArchivos(this.Area).subscribe(data => {
       if(data){
         this.archivos=data;
       }else{
