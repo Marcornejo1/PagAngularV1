@@ -31,15 +31,14 @@ export class LoginComponent {
             this.toastr.error("No se pudo iniciar sesion, revisa tu usuario/clave e intenta de nuevo",this.perfil.Respuesta,{positionClass:'toast-bottom-right'})
             formulario.reset();
           } else {
-            console.log('Respuesta del Perfil: ', this.perfil.Respuesta);
-            //console.log('Respuesta del PHP: ', this.perfil);
+            
             this.empleadoservicio.DatosPerfil = this.perfil;
             this.dialog.closeAll();
           }
         }
       },
       error => {
-        //console.log('Error al enviar los datos: ', error);
+        console.log('Error al enviar los datos: ', error);
       }
     );
   }

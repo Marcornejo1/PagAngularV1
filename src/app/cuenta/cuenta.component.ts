@@ -13,13 +13,13 @@ export class CuentaComponent {
   constructor(private servicioEmpleados: EmpleadosService) {
     console.clear();
     const SessionValue = localStorage.getItem('user');
-    console.log('Hola: ', SessionValue);
+    
     this.perfil = SessionValue;
     this.perfil = JSON.parse(this.perfil);
     this.servicioEmpleados.SolicitarClave(this.perfil.ADUser).subscribe(
       (data: any) => {
         this.clave=data;
-        console.log("Clave: ",this.clave);
+        
       },
       (error) => {
 

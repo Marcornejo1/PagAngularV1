@@ -19,7 +19,7 @@ export class InicioComponent {
 
     setTimeout(() => {
       this.mostrar = true;
-      console.clear();
+      //console.clear();
     }, 1000);
 
     this.servicioAnuncios.dataArray$.subscribe((dataArray) => {
@@ -73,7 +73,7 @@ export class InicioComponent {
   }
 
   onItemChange($event: any): void {
-    //console.log('Carousel onItemChange', $event);
+    
   }
 
 

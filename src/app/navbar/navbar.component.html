@@ -38,11 +38,11 @@
     <span class="example-spacer"></span>
     <button cButton color="primary" (click)="irAPrivacidad()">Aviso de Privacidad</button>
     <span class="example-spacer"></span>
-    <div *ngIf="!sesionIniciada">
+    <div *ngIf="!sesionIniciada||perfil.SesInic == 'NO'||perfil.SesInic == ''">
       <button cButton color="danger" shape="rounded-pill" (click)="openDialog()">Iniciar Sesion</button>
     </div>
     <span class="example-spacer"></span>
-    <div *ngIf="sesionIniciada">
+    <div *ngIf="sesionIniciada||perfil.SesInic == 'SI'">
 
       <button mat-raised-button color="primary" (click)="irAMiCuenta()">Mi Cuenta</button>
       <a>-------</a>

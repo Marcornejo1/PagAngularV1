@@ -15,12 +15,12 @@ export class AreaComponent {
   constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router, private servicioArchivos: ArchivosService) {
     console.clear();
     const SessionValue = localStorage.getItem('user');
-    console.log('Hola: ', SessionValue);
+    
     this.perfil = SessionValue;
     this.perfil = JSON.parse(this.perfil);
     console.error(this.perfil);
     this.Area=this.perfil.ADAreaUsr;
-    console.log('Area: ',this.Area);
+    
     
     this.servicioArchivos.obtenerArchivos(this.Area).subscribe(data => {
       if(data){
@@ -32,7 +32,7 @@ export class AreaComponent {
   }
 
   descargarArchivo(nombreArchivo:string):void{
-    const rutaArchivo='http://rcu.intranet/Archivos/SesionIniciada'+this.perfil.ADAreaUsr+'/'+nombreArchivo;
+    const rutaArchivo='http://rcu.intranet/Archivos/ARCHIVOS-PRIVADOS'+this.perfil.ADAreaUsr+'/'+nombreArchivo;
     const link=document.createElement('a');
     link.href=rutaArchivo;
     link.download=nombreArchivo;

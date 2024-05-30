@@ -14,8 +14,7 @@ export class RecibosComponent {
 
     this.perfil = SessionValue;
     this.perfil = JSON.parse(this.perfil);
-    console.log('Hola: ', this.perfil);
-
+    
   }
   archivos: any[] = [];
   date: Date[] | undefined;

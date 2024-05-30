@@ -26,7 +26,7 @@ export class AppComponent {
   constructor(private servicioAnuncios: AnunciosService, private router: Router, public dialog: MatDialog, private empleadoservicio: EmpleadosService) {
     const sessionValue = localStorage.getItem('user');
     if (sessionValue == null || sessionValue == "") {
-      //console.log("El objeto de sesión no está inicializado"); //inicialízalo aquí
+      
       const initialSessionObject: any = {
         Respuesta: 'valorPredeterminado',
         ADUser: 'Nadie',
@@ -36,7 +36,7 @@ export class AppComponent {
       localStorage.setItem('user', JSON.stringify(initialSessionObject));
     }
     else {
-      //console.log("Si existe objeto: " + localStorage.getItem('user'));
+      
 
     }
   }
