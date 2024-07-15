@@ -14,11 +14,13 @@ import { AreaComponent } from './area/area.component';
 import { MatDialog, MAT_DIALOG_DATA, MatDialogRef, MatDialogModule } from '@angular/material/dialog';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
-import { MatFormFieldModule } from '@angular/material/form-field'
-import { MatMenuModule } from '@angular/material/menu';;
+import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatCheckbox, MatCheckboxModule} from '@angular/material/checkbox';
+import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import {MatSlideToggleModule,_MatSlideToggleRequiredValidatorModule} from '@angular/material/slide-toggle';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -35,8 +37,11 @@ import {CalendarModule} from 'primeng/calendar';
 import { SubirAnuncioComponent } from './subir-anuncio/subir-anuncio.component';
 import { CapacitacionComponent } from './capacitacion/capacitacion.component';
 import { PrivacidadComponent } from './privacidad/privacidad.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
+import {MatRadioModule} from '@angular/material/radio';
 import { RecibosComponent } from './recibos/recibos.component';
+import { AdminBaseQRComponent } from './admin-base-qr/admin-base-qr.component';
+import { SubidaRecibosNomComponent } from './subida-recibos-nom/subida-recibos-nom.component';
 
 @NgModule({
   declarations: [
@@ -56,10 +61,15 @@ import { RecibosComponent } from './recibos/recibos.component';
     CapacitacionComponent,
     PrivacidadComponent,
     RecibosComponent,
+    AdminBaseQRComponent,
+    SubidaRecibosNomComponent,
     
   ],
   imports: [
+    ReactiveFormsModule,
     BrowserModule,
+    MatCheckboxModule,
+    MatRadioModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     NavModule,
@@ -72,6 +82,7 @@ import { RecibosComponent } from './recibos/recibos.component';
     ButtonModule,
     MatDialogModule,
     MatButtonModule,
+    MatSlideToggleModule,
     MatFormFieldModule,
     MatToolbarModule,
     MatMenuModule,
@@ -84,6 +95,7 @@ import { RecibosComponent } from './recibos/recibos.component';
     QRCodeModule,
     SpinnerModule,
     MatTabsModule,
+    
     CalendarModule,
     ToastrModule.forRoot(),
 

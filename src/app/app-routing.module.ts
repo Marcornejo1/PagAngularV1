@@ -13,6 +13,7 @@ import { SubirAnuncioComponent } from './subir-anuncio/subir-anuncio.component';
 import { CapacitacionComponent } from './capacitacion/capacitacion.component';
 import { PrivacidadComponent } from './privacidad/privacidad.component';
 import { RecibosComponent } from './recibos/recibos.component';
+import { SubidaRecibosNomComponent } from './subida-recibos-nom/subida-recibos-nom.component';
 
 const routes: Routes = [
   {path:'', component:InicioComponent},
@@ -29,6 +30,7 @@ const routes: Routes = [
   {path:'Privacidad',component:PrivacidadComponent},
   {path:'SistemaGestion/:area',component:SistemaGestionComponent},
   {path:'Recibos',component:RecibosComponent},
+  {path:'SubirRecibos',component:SubidaRecibosNomComponent},
   
 ];
 

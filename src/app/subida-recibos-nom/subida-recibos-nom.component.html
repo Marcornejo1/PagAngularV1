@@ -8,30 +8,27 @@
         <div class="header">
             <div>Generador de QR</div>
         </div>
-        <input type="text" placeholder="Ingresa el Username o nombre de usuario" class="text-field" [value]="QRInput" [(ngModel)]="QRInput">
+        <input matInput type="file" class="file-input" (change)="onFileSelected($event)" #fileUpload >
+        <button class="gen" (click)="Subir()">Subir Archivo</button>
 
-        <button class="gen" (click)="GenQR()">Generar</button>
-
-        <qrcode (qrCodeURL)="onCodeChange($event)" [allowEmptyString]="true" [qrdata]="TextoQR" [width]="300"
-            [errorCorrectionLevel]="'H'"></qrcode>
-
-        <a [href]="url" download="Qr-{{QRInput}}">Descargar Codigo QR</a>
+   
+        
     </div>
 
-    <mat-slide-toggle [(ngModel)]="isChecked"><label style="color: aliceblue;"> Administrar Usuarios
-        </label></mat-slide-toggle>
-
-    <div class="TablaQR" *ngIf="isChecked===true">
+    <div class="TablaRecibos">
         <p style="color: rgb(0, 0, 0);">Administrar Usuarios:</p>
         <button mat-raised-button style="margin-left: 10px;" (click)="agregar()">Agregar</button>
         <button mat-raised-button style="margin-left: 10px; margin-right: 10px;" [disabled]="!isSelected" (click)="eliminar()">Eliminar</button>
+
         <mat-form-field >
             <mat-label>Filtro</mat-label>
             <input matInput (keyup)="applyFilter($event)" placeholder="Ej. Victor" #input >
         </mat-form-field>
         <!--<button mat-raised-button disabled="true" style="margin-left: 10px;"  (click)="editar()">Editar usuario</button>-->
         <a style="color: rgb(0, 0, 0); margin-left: 10px; font-size: smaller;">Usuario Seleccionado: {{Fselecc.Nombre}}</a>
+
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+
             <ng-container matColumnDef="Id">
                 <th mat-header-cell *matHeaderCellDef>Id</th>
                 <td mat-cell *matCellDef="let element">{{element.Id}}</td>
@@ -73,9 +70,5 @@
 
         </table>
 
-
-
     </div>
-
-    <div class=""></div>
 </div>

@@ -1,0 +1,77 @@
+<mat-dialog-content class="mat-typography">
+    <form (ngSubmit)="enviarFormularioAgregar(myform)" #myform="ngForm" *ngIf="data.Instruccion==='Agregar'">
+        <h2 mat-dialog-title>AGREGAR USUARIO</h2>
+        <mat-form-field>
+            <mat-label for="usuario">Username</mat-label>
+            <input matInput name="usuario" [(ngModel)]="perfilAdd.Usuario" required>
+
+        </mat-form-field>
+
+        <mat-form-field style="margin-left: 20px;">
+            <mat-label for="Nombre">Nombre Completo</mat-label>
+            <input matInput name="Nombre" [(ngModel)]="perfilAdd.Nombre" required>
+
+        </mat-form-field>
+
+
+        <br>
+        <mat-form-field style="margin-left: 20px;">
+            <mat-label for="area">Area</mat-label>
+            <input matInput type="text" name="area" [(ngModel)]="perfilAdd.Area" required>
+        </mat-form-field>
+
+        <mat-form-field style="margin-left: 20px;">
+            <mat-label for="area">Nivel</mat-label>
+            <input matInput type="text" name="nivel" [(ngModel)]="perfilAdd.Nivel" required>
+        </mat-form-field>
+        <br>
+        <mat-form-field style="margin-left: 20px;">
+            <mat-label for="area">RFC</mat-label>
+            <input matInput type="text" name="rfc" [(ngModel)]="perfilAdd.RFC"  required>
+        </mat-form-field>
+        <br>
+        <mat-dialog-actions align="end">
+            <a *ngIf="SimboloCarga">
+                <c-spinner color="primary"></c-spinner>
+            </a>
+            <button mat-raised-button mat-dialog-close>Cancelar</button>
+            <button mat-raised-button cdkFocusInitial type="submit" >Agregar Usuario</button>
+        </mat-dialog-actions>
+    </form>
+
+    <form *ngIf="data.Instruccion==='Eliminar'">
+        <h2 mat-dialog-title>ELIMINAR USUARIO</h2>
+        <br>
+        <p style="font-weight: bold; color: red; font-size: medium;">Seguro que quieres eliminar a este usuario? Esta Accion no se podra deshacer</p>
+        <br>
+        <button mat-raised-button mat-dialog-close>Cancelar</button>
+        <button mat-raised-button cdkFocusInitial type="submit" (click)="Eliminar()">Confirmar</button>
+    </form>
+
+    <form *ngIf="data.Instruccion==='Editar'">
+        <h2 mat-dialog-title>EDITAR USUARIO</h2>
+        <mat-form-field style="margin-left: 20px;">
+            <mat-label for="usuario">Username</mat-label>
+            <input matInput name="usuario" type="text" class="text-field" [value]="data.Perfil.Username" [(ngModel)]="data.Perfil.Username">
+        </mat-form-field>
+
+        <mat-form-field style="margin-left: 20px;">
+            <mat-label for="Nombre">Nombre Completo</mat-label>
+            <input matInput name="Nombre" type="text" class="text-field" [value]="data.Perfil.Nombre" [(ngModel)]="data.Perfil.Nombre">
+        </mat-form-field>
+        <br>
+        <mat-form-field style="margin-left: 20px;">
+            <mat-label for="area">Area</mat-label>
+            <input matInput name="area" type="text" class="text-field" [value]="data.Perfil.Area" [(ngModel)]="data.Perfil.Area">
+        </mat-form-field>
+
+        <mat-form-field style="margin-left: 20px;">
+            <mat-label for="Nivel">Nivel</mat-label>
+            <input matInput name="Nivel" type="text" class="text-field" [value]="data.Perfil.Nivel" [(ngModel)]="data.Perfil.Nivel">
+        </mat-form-field>
+        <br>
+        <button mat-raised-button mat-dialog-close>Cancelar</button>
+        <button mat-raised-button cdkFocusInitial type="submit" disabled>Continuar</button>
+
+    </form>
+</mat-dialog-content>

@@ -7,6 +7,9 @@
             <h1 style="font-size: x-large;">Documentos:</h1>
             <li *ngFor="let archivo of archivos">
                 <div *ngIf="archivo.nombre !=='.' && archivo.nombre !=='..'">
+                    <div>
+                        
+                    </div>
                     <div *ngIf="archivo.tipo === 'application/pdf'">
                         <p><a [href]="'http://rcu.intranet/Archivos/'+area+'/'+archivo.nombre">{{archivo.nombre }}</a></p>
                     </div>
