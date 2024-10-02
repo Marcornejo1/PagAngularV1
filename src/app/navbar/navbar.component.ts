@@ -11,6 +11,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent {
+
   private readonly SESSION_KEY = 'mySessionObject';
   start: any;
   sesionIniciada: boolean = false;
@@ -120,6 +121,9 @@ export class NavbarComponent {
 
   IrASA() {
     this.router.navigate(['/SubidaAnuncio']);
+  }
+  IrASDC() {
+    this.router.navigate(['/SubirDocumentosC']);
   }
 
   Logout() {

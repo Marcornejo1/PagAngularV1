@@ -42,6 +42,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import { RecibosComponent } from './recibos/recibos.component';
 import { AdminBaseQRComponent } from './admin-base-qr/admin-base-qr.component';
 import { SubidaRecibosNomComponent } from './subida-recibos-nom/subida-recibos-nom.component';
+import { SubidaArchivosContabilidadComponent } from './subida-archivos-contabilidad/subida-archivos-contabilidad.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { SubidaRecibosNomComponent } from './subida-recibos-nom/subida-recibos-n
     RecibosComponent,
     AdminBaseQRComponent,
     SubidaRecibosNomComponent,
+    SubidaArchivosContabilidadComponent,
     
   ],
   imports: [

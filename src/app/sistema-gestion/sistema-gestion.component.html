@@ -1,26 +1,40 @@
 <div class="Contenedor">
-    <div class="block">
-        <h1 style="font-size: 50px; color:azure; padding-top: 10px;">{{area}}</h1>
-    </div>
-    <div class="box">
-        <ul>
-            <h1 style="font-size: x-large;">Documentos:</h1>
-            <li *ngFor="let archivo of archivos">
-                <div *ngIf="archivo.nombre !=='.' && archivo.nombre !=='..'">
-                    <div>
-                        
-                    </div>
-                    <div *ngIf="archivo.tipo === 'application/pdf'">
-                        <p><a [href]="'http://rcu.intranet/Archivos/'+area+'/'+archivo.nombre">{{archivo.nombre }}</a></p>
-                    </div>
-                </div>
-            </li>
-            <h1 style="font-size: x-large;">Documentos Descargables:</h1>
-            <li *ngFor="let archivo of archivos">
-                <div *ngIf="archivo.tipo !== 'application/pdf'">
-                    <p class="texto"><a (click)="descargarArchivo(archivo.nombre)">{{archivo.nombre}}</a>
-                </div>
-            </li>
-        </ul>
-    </div>
+  <div class="block">
+    <h1 style="font-size: 50px; color:azure; padding-top: 10px;">{{area}}</h1>
+    
+  </div>
+  <div class="box">
+    <ul>
+      <div *ngIf="area==='Administracion'">
+        <h1 style="font-size: x-large;">Actualizados:</h1>
+        <li *ngFor="let archivoact of archivosact">
+          <div *ngIf="archivoact.nombre !=='.' && archivoact.nombre !=='..'">
+            <div>
+    
+            </div>
+            <div *ngIf="archivoact.tipo === 'application/pdf'">
+              <p><a [href]="archivoact.rutaArchivo">{{archivoact.nombre}}</a>---Subido: {{archivoact.fechaSubida}}</p>
+            </div>
+          </div>
+        </li>
+      </div>
+      <h1 style="font-size: x-large;">Documentos:</h1>
+      <li *ngFor="let archivo of archivos">
+        <div *ngIf="archivo.nombre !=='.' && archivo.nombre !=='..'">
+          <div>
+
+          </div>
+          <div *ngIf="archivo.tipo === 'application/pdf'">
+            <p><a [href]="'http://rcu.intranet/Archivos/'+area+'/'+archivo.nombre">{{archivo.nombre }}</a></p>
+          </div>
+        </div>
+      </li>
+      <h1 style="font-size: x-large;">Documentos Descargables:</h1>
+      <li *ngFor="let archivo of archivos">
+        <div *ngIf="archivo.tipo !== 'application/pdf'">
+          <p class="texto"><a (click)="descargarArchivo(archivo.nombre)">{{archivo.nombre}}</a>
+        </div>
+      </li>
+    </ul>
+  </div>
 </div>

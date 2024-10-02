@@ -10,7 +10,7 @@ export class ArchivosService {
   private apiUrl = 'http://rcu.intranet/PHP/ArchivosSesion.php';
   private apiURL2 = 'http://rcu.intranet/PHP/SGestion.php';
   private apiURL3 = 'http://rcu.intranet/PHP/ArchivosCapacitacion.php';
-
+  private Url='http://rcu.intranet/PHP/';
   constructor(private http: HttpClient) { }
 
   //Aqui va el metodo para obtener la lista de archivos
@@ -30,4 +30,15 @@ export class ArchivosService {
     const data = { seccion: seccion };
     return this.http.post<string[]>(this.apiURL3, data);
   }
+
+  SubirArchivosContabilidad(file:File){
+    const formData=new FormData();
+    formData.append('archivo',file);
+    return this.http.post(this.Url+'SubirDocumentosConta.php',formData);
+  }
+  
+  PedirArchivosContabilidad():Observable<any[]>{
+    return this.http.get<any[]>(this.Url+'PedirArchivosActualizados.php');
+  }
+
 }

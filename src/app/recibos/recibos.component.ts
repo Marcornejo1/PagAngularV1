@@ -11,10 +11,10 @@ export class RecibosComponent {
   perfil: any;
   constructor(private servicioRecibos: RecibosService) {
     const SessionValue = localStorage.getItem('user');
-
     this.perfil = SessionValue;
     this.perfil = JSON.parse(this.perfil);
-    
+    this.ElegirFecha(this.selectedDate);
+
   }
   archivos: any[] = [];
   date: Date[] | undefined;
@@ -31,8 +31,47 @@ export class RecibosComponent {
     const month = Mes[this.selectedDate.getMonth()];
     const MonthName = NombreMes[this.selectedDate.getMonth()];
     this.perfil.Mes = MonthName;
+    this.perfil.Year = year;
     this.FormattedDate = `${month}/${year}`;
-    console.log(this.FormattedDate);
+    switch (this.perfil.ADAreaUsr) {
+      case 'Direccion Tecnologica':
+        this.perfil.gerencia = 'GERENCIA DE TECNOLOGIA';
+        break;
+      case 'Recursos Humanos':
+        this.perfil.gerencia = 'GERENCIA DE RECURSOS HUMANOS';
+        break;
+      case 'Contabilidad y Finanzas':
+        this.perfil.gerencia = 'GERENCIA DE TESORERIA'
+        break;
+      case 'Seguridad':
+        this.perfil.gerencia = 'GERENCIA DE SEGURIDAD'
+        break;
+      case 'Direccion de Proyectos':
+        this.perfil.gerencia = 'GERENCIA DE PROYECTOS'
+        break;
+      case 'Direccion Operativa':
+        this.perfil.gerencia = 'GERENCIA DE OPERACIONES'
+        break;
+      case 'Operativos':
+        this.perfil.gerencia = 'GERENCIA DE OPERACIONES'
+        break;
+      case '--':
+        this.perfil.gerencia = 'GERENCIA DE MONITOREO'
+        break;
+      case 'Control y Seguimiento':
+        this.perfil.gerencia = 'GERENCIA DE IMPLEMENTACION Y SEGUIMIENTO DE PROYECTOS'
+        break;
+      case 'Direccion General':
+        this.perfil.gerencia = 'DIRECCION GENERAL'
+        break;
+      case 'Comercializacion':
+        this.perfil.gerencia = 'GERENCIA DE COMERCIALIZACION'
+        break;
+
+
+    }
+
+    console.log(this.perfil);
     this.EnviarFecha(this.perfil);
 
   }
@@ -57,11 +96,11 @@ export class RecibosComponent {
       });
   }
 
-  descargarArchivo(nombreArchivo:string):void{
-    const rutaArchivo='http://rcu.intranet/Archivos/RFC-Recibos'+this.perfil.Nivel+'s/'+this.perfil.RFC+'/'+nombreArchivo;
-    const link=document.createElement('a');
-    link.href=rutaArchivo;
-    link.download=nombreArchivo;
+  descargarArchivo(nombreArchivo: string): void {
+    const rutaArchivo = 'http://rcu.intranet/Archivos/RFC-Recibos' + this.perfil.gerencia + '/' + this.perfil.RFC + '/' + nombreArchivo;
+    const link = document.createElement('a');
+    link.href = rutaArchivo;
+    link.download = nombreArchivo;
     link.click();
   }
 }

@@ -14,6 +14,7 @@ import { CapacitacionComponent } from './capacitacion/capacitacion.component';
 import { PrivacidadComponent } from './privacidad/privacidad.component';
 import { RecibosComponent } from './recibos/recibos.component';
 import { SubidaRecibosNomComponent } from './subida-recibos-nom/subida-recibos-nom.component';
+import { SubidaArchivosContabilidadComponent } from './subida-archivos-contabilidad/subida-archivos-contabilidad.component';
 
 const routes: Routes = [
   {path:'', component:InicioComponent},
@@ -31,6 +32,7 @@ const routes: Routes = [
   {path:'SistemaGestion/:area',component:SistemaGestionComponent},
   {path:'Recibos',component:RecibosComponent},
   {path:'SubirRecibos',component:SubidaRecibosNomComponent},
+  {path:'SubirDocumentosC',component:SubidaArchivosContabilidadComponent}
   
 ];
 

@@ -13,7 +13,7 @@ export class InicioComponent {
     { id: '', nombre: '', tipo: '', rutaArchivos: '' }
 
   ];
-  slides: any[] = new Array(4).fill({ id: -1, src: '', title: '', subtitle: '', tipo: '' });
+  slides: any[] = new Array().fill({ id: -1, src: '', title: '', subtitle: '', tipo: '' });
 
   constructor(private servicioAnuncios: AnunciosService, private router: Router) {
 
@@ -24,8 +24,24 @@ export class InicioComponent {
 
     this.servicioAnuncios.dataArray$.subscribe((dataArray) => {
       this.multimedia = dataArray;
+      console.log("cant.datos: ",this.multimedia.length)
+      const Elemento: any[]=this.multimedia;
+      
 
-      const Elemento1 = this.multimedia[0];
+      for (let index = 0; index < Elemento.length; index++) {
+        console.log("Elemento",index,": ",Elemento[index]);
+        this.slides[index]={
+          src:Elemento[index].rutaArchivo,
+          title: 'En desarrollo',
+          subtitle: 'Elemento en desarrollo',
+          tipo: Elemento[index].tipo,
+        }
+
+        
+      }
+      
+
+      /*const Elemento1 = this.multimedia[0];
       const Elemento2 = this.multimedia[1];
       const Elemento3 = this.multimedia[2];
       const Elemento4 = this.multimedia[3];
@@ -63,7 +79,7 @@ export class InicioComponent {
         subtitle: 'Elemento en desarrollo',
         tipo: Elemento4.tipo,
       }
-      console.log('Medio 4: ', this.multimedia[3]);
+      console.log('Medio 4: ', this.multimedia[3]);*/
 
     });
   }

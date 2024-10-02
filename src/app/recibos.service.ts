@@ -11,8 +11,11 @@ export class RecibosService {
   constructor(private http: HttpClient) { }
 
   MandarFecha(perfil:any):Observable<any>{
-    console.log('datos a enviar: ',perfil);
+    //console.log('datos a enviar: ',perfil);
     return this.http.post(this.URL+'PedirRecibos.php',perfil);
   }
-
+ 
+  SubirRecibo(formdata:FormData):Observable<any>{
+    return this.http.post(this.URL+'SubirRecibos.php',formdata);
+  }
 }

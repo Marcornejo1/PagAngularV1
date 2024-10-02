@@ -6,12 +6,12 @@
   <div class="columns">
     <div class="column is-two-thirds">
       <div *ngIf="mostrar">
-        <c-carousel (itemChange)="onItemChange($event)" [interval]="5000" transition="slide">
+        <c-carousel (itemChange)="onItemChange($event)" [interval]="0" transition="slide">
           <c-carousel-indicators></c-carousel-indicators>
           <c-carousel-inner>
             <c-carousel-item *ngFor="let slide of slides">
               
-              <div *ngIf="slide.tipo==='image/jpeg'">
+              <div *ngIf="slide.tipo==='image/jpeg'||slide.tipo==='image/png'" >
                 <img [src]="slide.src" alt="{{ slide.title }}" class="img-container" loading="lazy" />
               </div>
 
@@ -29,7 +29,7 @@
 
             </c-carousel-item>
           </c-carousel-inner>
-          <c-carousel-control [routerLink] caption="Previous" direction="prev"></c-carousel-control>
+          <c-carousel-control [routerLink] caption="Previous" direction="prev" style="top: 50%; height: 10%; "></c-carousel-control>
           <c-carousel-control [routerLink] caption="Next" direction="next"></c-carousel-control>
         </c-carousel>
       </div>

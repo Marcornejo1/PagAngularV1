@@ -13,15 +13,16 @@ export class AnunciosService {
 
   constructor(private http:HttpClient) { }
 
-  SubirAnuncio(file:File){
+  SubirAnuncio(file:File, option:string){
     const formData=new FormData();
-    formData.append('archivo',file);
+      formData.append('prioridad', option);
+      formData.append('archivo', file);
 
     return this.http.post(this.Url+'SubirAnuncio.php',formData);
   }
 
   PedirArchivos(): Observable<any[]>{
-    return this.http.get<any[]>(this.Url+'PedirArchivos.php');
+    return this.http.get<any[]>(this.Url+'PedirAnuncios.php');
   }
 
   setDataArray(dataArray:any[]){

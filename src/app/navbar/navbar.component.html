@@ -120,7 +120,8 @@
         </c-navbar-nav>
 
         <c-navbar-nav *ngIf="perfil.ADAreaUsr==='Contabilidad y Tesoreria'" style="display: flex; flex-direction: row; flex-wrap: wrap;">
-          
+            <a cNavLink title="SubirArchivo" (click)="IrASDC()" class="imgs"><img
+            src="../../assets/img/subirArchivoIcono.png" class="imagenes"></a>
             <a cNavLink (click)="IraRecibos()" class="imgs"><img title="Recibos de Nomina" class="imagenes"
                 src="../../assets/img/IconoRecibos.png"></a>
           
@@ -208,6 +209,18 @@
             <a cNavLink title="SubirArchivo" (click)="IrASA()" class="imgs"><img
                 src="../../assets/img/subirArchivoIcono.png" class="imagenes"></a>
           
+        </c-navbar-nav>
+        
+        <c-navbar-nav *ngIf="perfil.ADAreaUsr==='Recepcion'" style="display: flex; flex-direction: row; flex-wrap: wrap;">
+          
+          <a cNavLink (click)="IraRecibos()" class="imgs"><img title="Recibos de Nomina" class="imagenes"
+              src="../../assets/img/IconoRecibos.png"></a>
+
+          <a cNavLink title="Generador de Codigo QR" (click)="IrAQR()" class="imgs"><img
+              src="../../assets/img/CodigoQR-Logo.png" class="imagenes"></a>
+          <a cNavLink title="SubirArchivo" (click)="IrASA()" class="imgs"><img
+              src="../../assets/img/subirArchivoIcono.png" class="imagenes"></a>
+        
         </c-navbar-nav>
 
       </c-offcanvas-body>

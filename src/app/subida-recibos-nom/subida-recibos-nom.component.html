@@ -6,26 +6,37 @@
 <div class="Contenedor">
     <div class="Contenido">
         <div class="header">
-            <div>Generador de QR</div>
+            <div>Subir Recibo</div>
         </div>
-        <input matInput type="file" class="file-input" (change)="onFileSelected($event)" #fileUpload >
-        <button class="gen" (click)="Subir()">Subir Archivo</button>
+        <form (ngSubmit)="SubirArchivo()" enctype="multipart/form-data">
+            <div class="field">
+                <label class="label">Archivo del recibo </label>
+                <input class="form-control form-control-lg" name="Archivo" type="file" accept="image/*,video/*"
+                    (change)="ArchivoSeleccionado($event)">
+            </div>
+            <div class="field">
+                <div class="control">
+                    <button type="submit" class="button is-link">Enviar</button>
+                </div>
+            </div>
+        </form>
 
-   
-        
+
     </div>
 
     <div class="TablaRecibos">
         <p style="color: rgb(0, 0, 0);">Administrar Usuarios:</p>
         <button mat-raised-button style="margin-left: 10px;" (click)="agregar()">Agregar</button>
-        <button mat-raised-button style="margin-left: 10px; margin-right: 10px;" [disabled]="!isSelected" (click)="eliminar()">Eliminar</button>
+        <button mat-raised-button style="margin-left: 10px; margin-right: 10px;" [disabled]="!isSelected"
+            (click)="eliminar()">Eliminar</button>
 
-        <mat-form-field >
+        <mat-form-field>
             <mat-label>Filtro</mat-label>
-            <input matInput (keyup)="applyFilter($event)" placeholder="Ej. Victor" #input >
+            <input matInput (keyup)="applyFilter($event)" placeholder="Ej. Victor" #input>
         </mat-form-field>
         <!--<button mat-raised-button disabled="true" style="margin-left: 10px;"  (click)="editar()">Editar usuario</button>-->
-        <a style="color: rgb(0, 0, 0); margin-left: 10px; font-size: smaller;">Usuario Seleccionado: {{Fselecc.Nombre}}</a>
+        <a style="color: rgb(0, 0, 0); margin-left: 10px; font-size: smaller;">Usuario Seleccionado:
+            {{Fselecc.Nombre}}</a>
 
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
 
