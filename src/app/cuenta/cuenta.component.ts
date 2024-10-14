@@ -11,7 +11,6 @@ export class CuentaComponent {
   user: any;
   clave: any;
   constructor(private servicioEmpleados: EmpleadosService) {
-    console.clear();
     const SessionValue = localStorage.getItem('user');
     
     this.perfil = SessionValue;

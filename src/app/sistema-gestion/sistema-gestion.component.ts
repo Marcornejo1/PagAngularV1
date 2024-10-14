@@ -18,7 +18,6 @@ export class SistemaGestionComponent {
       this.servicioArchivos.ArchivosSistemaGestion(this.area).subscribe(
         (data: any) => {
           this.archivos = data;
-          console.log("Archivos: ", this.archivos);
         },
         (error) => {
           this.archivos = [];
@@ -30,7 +29,6 @@ export class SistemaGestionComponent {
     this.servicioArchivos.PedirArchivosContabilidad().subscribe(
       (data:any)=>{
         this.archivosact=data;
-        console.log("Actualizados:",this.archivosact);
       }
     );
 

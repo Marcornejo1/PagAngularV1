@@ -22,7 +22,6 @@ export class SubirAnuncioComponent {
   ArchivoSeleccionado(event: any): void {
     this.selectedFile=event.target.files[0];
     this.archivo=this.selectedFile;
-    console.log('archivo: ',this.archivo);
   }
 
   //En esta funcion manejamos la logica del archivo y se manda la informacion al servicio:
@@ -30,7 +29,6 @@ export class SubirAnuncioComponent {
     if(this.archivo){
       this.ServicioAnuncios.SubirAnuncio(this.archivo,this.prioridad).subscribe(
         (respuesta)=>{
-          console.log('Se subio con exito', respuesta);
           this.toastr.success("Se envio correctamente el archivo","",{positionClass:'toast-bottom-right'})
         },
         (error)=>{

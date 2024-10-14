@@ -25,16 +25,13 @@ export class AdminBaseQRComponent {
   SimboloCarga: any;
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any, public dialog: MatDialog, private toastr: ToastrService, private fb: FormBuilder,private QRService:BaseQRService) {
-  console.log('Enviado: ',data.Perfil)
   this.Id=data.Perfil.Id
   }
 
   enviarFormularioAgregar(formulario: NgForm) {
-    console.log(this.perfilAdd)
     this.QRService.AgregarDatos(this.perfilAdd).subscribe(
       (data:any)=>{
         this.toastr.success("Usuario Agregadp con exito, se vera reflejado al recargar la pagina","",{positionClass:'toast-bottom-right'})
-        console.log(data)
         this.dialog.closeAll();
       }
     )
@@ -49,7 +46,6 @@ export class AdminBaseQRComponent {
     this.QRService.EliminarDatos(this.Id).subscribe(
       (data:any)=>{
         this.toastr.success("Usuario Eliminado con exito, se vera reflejado al recargar la pagina","",{positionClass:'toast-bottom-right'})
-        console.log(data)
         this.dialog.closeAll();
       },
       (error)=>{

@@ -49,14 +49,12 @@ export class SubidaRecibosNomComponent {
   }
 
   onCodeChange(url: SafeUrl) {
-    console.log(url);
     this.url = url;
   }
   click(row: any) {
     this.Fselecc = row;
 
     this.isSelected = true;
-    console.log(this.Fselecc);
   }
 
   agregar() {
@@ -95,7 +93,6 @@ export class SubidaRecibosNomComponent {
 
       this.SerbicioRecibos.SubirRecibo(Datos).subscribe(
         (respuesta) => {
-          console.log('Se subio con exito', respuesta);
           this.toastr.success("Se envio correctamente el archivo", "", { positionClass: 'toast-bottom-right' })
         },
         (error) => {
@@ -108,7 +105,6 @@ export class SubidaRecibosNomComponent {
   //Se maneja el cambio de archivo subido por el usuario antes de enviarlo
   ArchivoSeleccionado(event: any): void {
     this.selectedFile = event.target.files[0];
-    console.log('archivo: ', this.selectedFile);
 
   }
 

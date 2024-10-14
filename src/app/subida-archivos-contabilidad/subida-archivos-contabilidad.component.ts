@@ -22,7 +22,6 @@ export class SubidaArchivosContabilidadComponent {
   //Se maneja el cambio de archivo subido por el usuario antes de enviarlo
   ArchivoSeleccionado(event: any): void {
     this.selectedFile = event.target.files[0];
-    console.log('archivo: ', this.selectedFile);
   }
 
   //En esta funcion manejamos la logica del archivo y se manda la informacion al servicio:
@@ -30,7 +29,6 @@ export class SubidaArchivosContabilidadComponent {
     if(this.selectedFile){
       this.servicioDocumentos.SubirArchivosContabilidad(this.selectedFile).subscribe(
         (respuesta)=>{
-          console.log('Se subio con exito', respuesta);
           this.toastr.success("Se envio correctamente el archivo","",{positionClass:'toast-bottom-right'})
         },
         (error)=>{

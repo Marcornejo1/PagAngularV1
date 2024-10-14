@@ -45,12 +45,10 @@ export class GeneradorQRComponent {
   TextoQR: string='';
   url: SafeUrl = '';
   GenQR() {
-    console.log("Input: "+this.QRInput)
     this.TextoQR = "https://aplicaciones02rcu.com.mx:3000/Acceso.php?usuario=" + this.QRInput;
   }
 
   onCodeChange(url: SafeUrl) {
-    console.log(url);
     this.url = url;
   }
   
@@ -58,7 +56,6 @@ click(row:any){
   this.Fselecc=row;
   this.QRInput=this.Fselecc.Username;
   this.isSelected=true;
-  console.log(this.Fselecc);
 }
 
 agregar(){

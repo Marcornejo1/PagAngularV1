@@ -71,25 +71,20 @@ export class RecibosComponent {
 
     }
 
-    console.log(this.perfil);
     this.EnviarFecha(this.perfil);
 
   }
 
   EnviarFecha(perfil: any) {
-    //console.log(date);
     this.servicioRecibos.MandarFecha(perfil).subscribe(
       (response: any) => {
         if (response == 'NO') {
           this.tieneArchivo = false;
-          console.log("No hay Archivos");
         } else if (response == 'NO-DIR') {
           this.tieneArchivo = false;
-          console.log("No existe el directorio");
         } else {
           this.tieneArchivo = true;
           this.archivos = response;
-          console.log('Respuesta: ', this.archivos);
         }
       }, (error) => {
         console.error('Error: ', error);

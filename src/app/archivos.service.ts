@@ -20,13 +20,11 @@ export class ArchivosService {
   }
 
   ArchivosSistemaGestion(area: string): Observable<string[]> {
-    console.log("Zona: ", area);
     const data = { area: area };
     return this.http.post<string[]>(this.apiURL2, data);
   }
 
   ArchivosCapacitacion(seccion: string): Observable<string[]> {
-    console.log("Seccion: ", seccion);
     const data = { seccion: seccion };
     return this.http.post<string[]>(this.apiURL3, data);
   }
