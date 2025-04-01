@@ -59,10 +59,11 @@
 
         <button cButtonClose class="text-reset" cOffcanvasToggle="OffcanvasSidebar" aria-label="Close"></button>
       </c-offcanvas-header>
-      <c-offcanvas-body >
+      <c-offcanvas-body>
         <h3>Herramientas del Area:</h3>
 
-        <c-navbar-nav *ngIf="perfil.ADAreaUsr==='Visita' || perfil.ADAreaUsr==='' ||perfil.ADAreaUsr===null" style="display: flex;">
+        <c-navbar-nav *ngIf="perfil.ADAreaUsr==='Visita' || perfil.ADAreaUsr==='' ||perfil.ADAreaUsr===null"
+          style="display: flex;">
           <c-nav-item>
             <p><img class="imagenSideNav" src="../../assets/img/Proyecto_en_construccion.jpg"></p>
           </c-nav-item>
@@ -70,7 +71,8 @@
 
         </c-navbar-nav>
 
-        <c-navbar-nav *ngIf="perfil.ADAreaUsr==='Direccion Tecnologica'" style="display: flex; flex-direction: row; flex-wrap: wrap;">
+        <c-navbar-nav *ngIf="perfil.ADAreaUsr==='Direccion Tecnologica'"
+          style="display: flex; flex-direction: row; flex-wrap: wrap;">
 
           <a cNavLink (click)="IraRecibos()" class="imgs"><img title="Recibos de Nomina" class="imagenes"
               src="../../assets/img/IconoRecibos.png"></a>
@@ -111,7 +113,8 @@
 
         </c-navbar-nav>
 
-        <c-navbar-nav *ngIf="perfil.ADAreaUsr==='Logistica'" style="display: flex; flex-direction: row; flex-wrap: wrap;">
+        <c-navbar-nav *ngIf="perfil.ADAreaUsr==='Logistica'"
+          style="display: flex; flex-direction: row; flex-wrap: wrap;">
 
           <a cNavLink (click)="IraRecibos()" class="imgs"><img title="Recibos de Nomina" class="imagenes"
               src="../../assets/img/IconoRecibos.png"></a>
@@ -119,100 +122,113 @@
 
         </c-navbar-nav>
 
-        <c-navbar-nav *ngIf="perfil.ADAreaUsr==='Contabilidad y Tesoreria'" style="display: flex; flex-direction: row; flex-wrap: wrap;">
-            <a cNavLink title="SubirArchivo" (click)="IrASDC()" class="imgs"><img
-            src="../../assets/img/subirArchivoIcono.png" class="imagenes"></a>
-            <a cNavLink (click)="IraRecibos()" class="imgs"><img title="Recibos de Nomina" class="imagenes"
-                src="../../assets/img/IconoRecibos.png"></a>
-          
+        <c-navbar-nav *ngIf="perfil.ADAreaUsr==='Contabilidad y Tesoreria'"
+          style="display: flex; flex-direction: row; flex-wrap: wrap;">
+          <a cNavLink title="SubirArchivo" (click)="IrASDC()" class="imgs"><img
+              src="../../assets/img/subirArchivoIcono.png" class="imagenes"></a>
+          <a cNavLink (click)="IraRecibos()" class="imgs"><img title="Recibos de Nomina" class="imagenes"
+              src="../../assets/img/IconoRecibos.png"></a>
+
         </c-navbar-nav>
 
-        <c-navbar-nav *ngIf="perfil.ADAreaUsr==='Direccion de Proyectos'" style="display: flex; flex-direction: row; flex-wrap: wrap;">
-          
-            <a cNavLink (click)="IraRecibos()" class="imgs"><img title="Recibos de Nomina" class="imagenes"
-                src="../../assets/img/IconoRecibos.png"></a>
-          
+        <c-navbar-nav *ngIf="perfil.ADAreaUsr==='Direccion de Proyectos'"
+          style="display: flex; flex-direction: row; flex-wrap: wrap;">
+
+          <a cNavLink (click)="IraRecibos()" class="imgs"><img title="Recibos de Nomina" class="imagenes"
+              src="../../assets/img/IconoRecibos.png"></a>
+
         </c-navbar-nav>
 
-        <c-navbar-nav *ngIf="perfil.ADAreaUsr==='Direccion General'" style="display: flex; flex-direction: row; flex-wrap: wrap;">
-          
-            <a cNavLink (click)="IraRecibos()" class="imgs"><img title="Recibos de Nomina" class="imagenes"
-                src="../../assets/img/IconoRecibos.png"></a>
-          
+        <c-navbar-nav *ngIf="perfil.ADAreaUsr==='Direccion General'"
+          style="display: flex; flex-direction: row; flex-wrap: wrap;">
+
+          <a cNavLink (click)="IraRecibos()" class="imgs"><img title="Recibos de Nomina" class="imagenes"
+              src="../../assets/img/IconoRecibos.png"></a>
+
         </c-navbar-nav>
 
-        <c-navbar-nav *ngIf="perfil.ADAreaUsr==='Direccion Operativa'" style="display: flex; flex-direction: row; flex-wrap: wrap;">
-          
-            <a cNavLink (click)="IraRecibos()" class="imgs"><img title="Recibos de Nomina" class="imagenes"
-                src="../../assets/img/IconoRecibos.png"></a>
-          
+        <c-navbar-nav *ngIf="perfil.ADAreaUsr==='Direccion Operativa'"
+          style="display: flex; flex-direction: row; flex-wrap: wrap;">
+
+          <a cNavLink (click)="IraRecibos()" class="imgs"><img title="Recibos de Nomina" class="imagenes"
+              src="../../assets/img/IconoRecibos.png"></a>
+
         </c-navbar-nav>
 
         <c-navbar-nav *ngIf="perfil.ADAreaUsr==='Almacen'" style="display: flex; flex-direction: row; flex-wrap: wrap;">
-          
-            <a cNavLink (click)="IraRecibos()" class="imgs"><img title="Recibos de Nomina" class="imagenes"
-                src="../../assets/img/IconoRecibos.png"></a>
-          
+
+          <a cNavLink (click)="IraRecibos()" class="imgs"><img title="Recibos de Nomina" class="imagenes"
+              src="../../assets/img/IconoRecibos.png"></a>
+
         </c-navbar-nav>
 
-        <c-navbar-nav *ngIf="perfil.ADAreaUsr==='Operativos'" style="display: flex; flex-direction: row; flex-wrap: wrap;">
-          
-            <a cNavLink (click)="IraRecibos()" class="imgs"><img title="Recibos de Nomina" class="imagenes"
-                src="../../assets/img/IconoRecibos.png"></a>
-          
+        <c-navbar-nav *ngIf="perfil.ADAreaUsr==='Operativos'"
+          style="display: flex; flex-direction: row; flex-wrap: wrap;">
+
+          <a cNavLink (click)="IraRecibos()" class="imgs"><img title="Recibos de Nomina" class="imagenes"
+              src="../../assets/img/IconoRecibos.png"></a>
+
         </c-navbar-nav>
 
         <c-navbar-nav *ngIf="perfil.ADAreaUsr==='Central'" style="display: flex; flex-direction: row; flex-wrap: wrap;">
-          
-            <a cNavLink (click)="IraRecibos()" class="imgs"><img title="Recibos de Nomina" class="imagenes"
-                src="../../assets/img/IconoRecibos.png"></a>
-          
+
+          <a cNavLink (click)="IraRecibos()" class="imgs"><img title="Recibos de Nomina" class="imagenes"
+              src="../../assets/img/IconoRecibos.png"></a>
+
         </c-navbar-nav>
 
-        <c-navbar-nav *ngIf="perfil.ADAreaUsr==='Control y Seguimiento'" style="display: flex; flex-direction: row; flex-wrap: wrap;"> 
-          
-            <a cNavLink (click)="IraRecibos()" class="imgs"><img title="Recibos de Nomina" class="imagenes"
-                src="../../assets/img/IconoRecibos.png"></a>
-          
+        <c-navbar-nav *ngIf="perfil.ADAreaUsr==='Control y Seguimiento'"
+          style="display: flex; flex-direction: row; flex-wrap: wrap;">
+
+          <a cNavLink (click)="IraRecibos()" class="imgs"><img title="Recibos de Nomina" class="imagenes"
+              src="../../assets/img/IconoRecibos.png"></a>
+
         </c-navbar-nav>
 
-        <c-navbar-nav *ngIf="perfil.ADAreaUsr==='Infomeca'" style="display: flex; flex-direction: row; flex-wrap: wrap;">
-          
-            <a cNavLink (click)="IraRecibos()" class="imgs"><img title="Recibos de Nomina" class="imagenes"
-                src="../../assets/img/IconoRecibos.png"></a>
-          
+        <c-navbar-nav *ngIf="perfil.ADAreaUsr==='Infomeca'"
+          style="display: flex; flex-direction: row; flex-wrap: wrap;">
+
+          <a cNavLink (click)="IraRecibos()" class="imgs"><img title="Recibos de Nomina" class="imagenes"
+              src="../../assets/img/IconoRecibos.png"></a>
+          <a cNavLink href="http://172.16.120.19:8080/login" class="imgs" target="_blank"><img title="SGI"
+              src="../../assets/img/capturaSGI.png" class="imagenes"></a>
+
         </c-navbar-nav>
 
-        <c-navbar-nav *ngIf="perfil.ADAreaUsr==='Refugios'" style="display: flex; flex-direction: row; flex-wrap: wrap;">
-          
-            <a cNavLink (click)="IraRecibos()" class="imgs"><img title="Recibos de Nomina" class="imagenes"
-                src="../../assets/img/IconoRecibos.png"></a>
-          
+        <c-navbar-nav *ngIf="perfil.ADAreaUsr==='Refugios'"
+          style="display: flex; flex-direction: row; flex-wrap: wrap;">
+
+          <a cNavLink (click)="IraRecibos()" class="imgs"><img title="Recibos de Nomina" class="imagenes"
+              src="../../assets/img/IconoRecibos.png"></a>
+
         </c-navbar-nav>
 
-        <c-navbar-nav *ngIf="perfil.ADAreaUsr==='Mantenimiento'" style="display: flex; flex-direction: row; flex-wrap: wrap; ">
-          
-            <a cNavLink (click)="IraRecibos()" class="imgs"><img title="Recibos de Nomina" class="imagenes"
-                src="../../assets/img/IconoRecibos.png"></a>
-          
+        <c-navbar-nav *ngIf="perfil.ADAreaUsr==='Mantenimiento'"
+          style="display: flex; flex-direction: row; flex-wrap: wrap; ">
+
+          <a cNavLink (click)="IraRecibos()" class="imgs"><img title="Recibos de Nomina" class="imagenes"
+              src="../../assets/img/IconoRecibos.png"></a>
+
         </c-navbar-nav>
 
-        <c-navbar-nav *ngIf="perfil.ADAreaUsr==='Recursos Humanos'" style="display: flex; flex-direction: row; flex-wrap: wrap;">
-          
-            <a cNavLink (click)="IraRecibos()" class="imgs"><img title="Recibos de Nomina" class="imagenes"
-                src="../../assets/img/IconoRecibos.png"></a>
-          
+        <c-navbar-nav *ngIf="perfil.ADAreaUsr==='Recursos Humanos'"
+          style="display: flex; flex-direction: row; flex-wrap: wrap;">
 
-          
-            <a cNavLink title="Generador de Codigo QR" (click)="IrAQR()" class="imgs"><img
-                src="../../assets/img/CodigoQR-Logo.png" class="imagenes"></a>
-            <a cNavLink title="SubirArchivo" (click)="IrASA()" class="imgs"><img
-                src="../../assets/img/subirArchivoIcono.png" class="imagenes"></a>
-          
+          <a cNavLink (click)="IraRecibos()" class="imgs"><img title="Recibos de Nomina" class="imagenes"
+              src="../../assets/img/IconoRecibos.png"></a>
+
+
+
+          <a cNavLink title="Generador de Codigo QR" (click)="IrAQR()" class="imgs"><img
+              src="../../assets/img/CodigoQR-Logo.png" class="imagenes"></a>
+          <a cNavLink title="SubirArchivo" (click)="IrASA()" class="imgs"><img
+              src="../../assets/img/subirArchivoIcono.png" class="imagenes"></a>
+
         </c-navbar-nav>
-        
-        <c-navbar-nav *ngIf="perfil.ADAreaUsr==='Recepcion'" style="display: flex; flex-direction: row; flex-wrap: wrap;">
-          
+
+        <c-navbar-nav *ngIf="perfil.ADAreaUsr==='Recepcion'"
+          style="display: flex; flex-direction: row; flex-wrap: wrap;">
+
           <a cNavLink (click)="IraRecibos()" class="imgs"><img title="Recibos de Nomina" class="imagenes"
               src="../../assets/img/IconoRecibos.png"></a>
 
@@ -220,7 +236,7 @@
               src="../../assets/img/CodigoQR-Logo.png" class="imagenes"></a>
           <a cNavLink title="SubirArchivo" (click)="IrASA()" class="imgs"><img
               src="../../assets/img/subirArchivoIcono.png" class="imagenes"></a>
-        
+
         </c-navbar-nav>
 
       </c-offcanvas-body>

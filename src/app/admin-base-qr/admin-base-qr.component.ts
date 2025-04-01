@@ -31,7 +31,7 @@ export class AdminBaseQRComponent {
   enviarFormularioAgregar(formulario: NgForm) {
     this.QRService.AgregarDatos(this.perfilAdd).subscribe(
       (data:any)=>{
-        this.toastr.success("Usuario Agregadp con exito, se vera reflejado al recargar la pagina","",{positionClass:'toast-bottom-right'})
+        this.toastr.success("Usuario Agregado con exito, se verá reflejado al recargar la página","",{positionClass:'toast-bottom-right'})
         this.dialog.closeAll();
       }
     )
@@ -45,7 +45,7 @@ export class AdminBaseQRComponent {
   Eliminar() {
     this.QRService.EliminarDatos(this.Id).subscribe(
       (data:any)=>{
-        this.toastr.success("Usuario Eliminado con exito, se vera reflejado al recargar la pagina","",{positionClass:'toast-bottom-right'})
+        this.toastr.success("Usuario Eliminado con exito, se vera reflejado al recargar la página","",{positionClass:'toast-bottom-right'})
         this.dialog.closeAll();
       },
       (error)=>{
